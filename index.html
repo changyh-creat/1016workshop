@@ -65,6 +65,21 @@
     .mobile-menu.is-open { display: grid; gap: 4px; }
     .mobile-menu a { padding: 11px 4px; color: var(--muted); font-size: .9rem; font-weight: 600; }
     .hero { position: relative; min-height: 720px; display: grid; align-items: center; padding: 150px 0 90px; overflow: hidden; background: linear-gradient(120deg, var(--paper) 0%, #f5f1e9 55%, #e7eee9 100%); }
+    .hero--video { min-height: 100svh; color: var(--white); isolation: isolate; background: var(--green-dark); }
+    .hero-video-layer { position: absolute; z-index: -3; inset: 0; overflow: hidden; background: var(--green-dark); }
+    .hero-video-layer iframe { position: absolute; top: 50%; left: 50%; width: 177.78vh; min-width: 100%; height: 56.25vw; min-height: 100%; border: 0; transform: translate(-50%, -50%); pointer-events: none; }
+    .hero-video-overlay { position: absolute; z-index: -2; inset: 0; background: linear-gradient(90deg, rgba(25,38,31,.9) 0%, rgba(45,62,52,.72) 43%, rgba(25,38,31,.42) 100%), linear-gradient(0deg, rgba(25,38,31,.65), transparent 58%); }
+    .hero--video::before { z-index: -1; background: radial-gradient(circle at 75% 28%, rgba(201,169,106,.22), transparent 31%); }
+    .hero--video::after { opacity: .28; border-color: rgba(255,255,255,.28); }
+    .hero--video .eyebrow { color: #f4d99d; }
+    .hero--video .eyebrow::before { background: #f4d99d; }
+    .hero--video h1 { text-shadow: 0 4px 28px rgba(0,0,0,.26); }
+    .hero--video .highlight { background-image: linear-gradient(110deg, #fff 22%, #f4d99d 48%, #fff 73%); }
+    .hero--video .hero-lead, .hero--video .hero-note { color: rgba(255,255,255,.82); }
+    .hero--video .hero-note i { color: #f4d99d; }
+    .hero--video .btn--outline { color: var(--white); border-color: rgba(255,255,255,.42); background: rgba(255,255,255,.08); }
+    .hero--video .btn--outline:hover { border-color: #f4d99d; background: rgba(255,255,255,.16); }
+    .hero-video-credit { position: absolute; right: 24px; bottom: 24px; z-index: 2; color: rgba(255,255,255,.58); font-size: .65rem; letter-spacing: .08em; }
     .hero::before { position: absolute; top: 8%; left: 38%; width: 430px; height: 430px; border-radius: 50%; background: radial-gradient(circle, rgba(201,169,106,.14), transparent 66%); content: ""; animation: aura-drift 12s ease-in-out infinite alternate; pointer-events: none; }
     .hero::after { position: absolute; right: -120px; bottom: -180px; width: 500px; height: 500px; border: 1px solid rgba(74,93,82,.12); border-radius: 50%; content: ""; box-shadow: 0 0 0 38px rgba(201,169,106,.07), 0 0 0 78px rgba(74,93,82,.045); }
     .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(340px, .88fr); align-items: center; gap: 80px; }
@@ -181,6 +196,27 @@
     .contact-option strong { display: block; font-size: .84rem; }
     .contact-option span { display: block; margin-top: 2px; color: var(--muted); font-size: .7rem; }
     .contact-option > i { color: var(--gold); font-size: .78rem; }
+    .contact-form { display: grid; gap: 16px; margin-top: 24px; }
+    .contact-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-field { display: grid; gap: 7px; }
+    .form-field label { color: var(--green-dark); font-size: .74rem; font-weight: 800; }
+    .form-field input, .form-field select, .form-field textarea { width: 100%; border: 1px solid rgba(74,93,82,.18); border-radius: 12px; outline: 0; color: var(--ink); background: var(--white); font-size: .82rem; transition: border-color .2s ease, box-shadow .2s ease; }
+    .form-field input, .form-field select { height: 46px; padding: 0 13px; }
+    .form-field textarea { min-height: 118px; padding: 12px 13px; resize: vertical; line-height: 1.75; }
+    .form-field input::placeholder, .form-field textarea::placeholder { color: #a3aaa4; }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 4px rgba(201,169,106,.14); }
+    .contact-form .btn { width: 100%; margin-top: 2px; }
+    .form-note { margin: 0; color: var(--muted); font-size: .68rem; line-height: 1.7; }
+    .form-feedback { display: none; margin: 0; padding: 11px 13px; border-radius: 11px; color: var(--green-dark); background: #e8eee9; font-size: .75rem; }
+    .form-feedback.is-visible { display: block; }
+    .submit-modal { position: fixed; z-index: 70; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(35,45,39,.62); opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility .25s ease; }
+    .submit-modal.is-open { opacity: 1; visibility: visible; }
+    .submit-modal-card { width: min(420px, 100%); padding: 34px 28px 28px; border: 1px solid rgba(255,255,255,.9); border-radius: 24px; text-align: center; background: var(--paper); box-shadow: 0 25px 80px rgba(0,0,0,.24); transform: translateY(12px) scale(.97); transition: transform .3s ease; }
+    .submit-modal.is-open .submit-modal-card { transform: none; }
+    .submit-modal-icon { display: grid; width: 56px; height: 56px; margin: 0 auto; place-items: center; border-radius: 18px; color: var(--white); background: var(--green); font-size: 1.25rem; }
+    .submit-modal-card h3 { margin: 18px 0 0; font-family: "Noto Serif TC", "Noto Sans TC", serif; font-size: 1.35rem; font-weight: 600; }
+    .submit-modal-card p { margin: 9px 0 0; color: var(--muted); font-size: .8rem; }
+    .submit-modal-close { margin-top: 22px; min-width: 120px; border: 0; cursor: pointer; }
     .site-footer { padding: 26px 0; color: var(--muted); background: #f4f1eb; font-size: .72rem; }
     .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
     .footer-socials { display: flex; gap: 8px; }
@@ -234,6 +270,7 @@
       .project-card, .project-card:nth-child(1), .project-card:nth-child(2), .project-card:nth-child(3), .project-card:nth-child(4), .project-card:nth-child(5) { grid-column: auto; }
       .project-image { height: 230px; }
       .contact-panel { padding: 22px; }
+      .contact-form-grid { grid-template-columns: 1fr; }
       .footer-row { align-items: flex-start; flex-direction: column; }
       .modal-backdrop { padding: 14px; }
       .project-modal { display: block; max-height: calc(100vh - 28px); overflow-y: auto; }
@@ -266,7 +303,9 @@
   </header>
 
   <main>
-    <section id="home" class="hero">
+    <section id="home" class="hero hero--video">
+      <div class="hero-video-layer" aria-hidden="true"><iframe src="https://www.youtube.com/embed/pz79VnOOa2I?autoplay=1&mute=1&loop=1&playlist=pz79VnOOa2I&controls=0&rel=0&modestbranding=1&playsinline=1" title="品牌視覺背景影片" allow="autoplay; fullscreen; picture-in-picture"></iframe></div>
+      <div class="hero-video-overlay" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="reveal">
           <span class="eyebrow">Visual Designer · Brand Thinker</span>
@@ -281,6 +320,7 @@
           <div class="hero-card hero-card--tag-bottom"><strong>從概念到完成</strong>讓每個細節都有方向</div>
         </div>
       </div>
+      <span class="hero-video-credit">MOVING IMAGE · BRAND ATMOSPHERE</span>
     </section>
 
     <section id="about" class="section">
@@ -328,8 +368,8 @@
 
     <section id="contact" class="section contact-section">
       <div class="container contact-grid">
-        <div class="reveal"><div class="section-heading"><span class="eyebrow">Let's connect</span><h2>有一個想法，<br /><span style="color: var(--gold);">我們可以一起整理。</span></h2><p>不需要一開始就準備完整答案。先說說你的品牌、目前的問題與想完成的事，從一次輕鬆的對話開始。</p></div><div class="contact-actions"><a class="btn btn--primary" href="https://forms.gle/tN5DUWCAAWmKz8gG9" target="_blank" rel="noopener noreferrer">填寫需求表單 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="btn btn--outline" href="https://calendar.app.google/BkCQoLMJNLMw4RFDA" target="_blank" rel="noopener noreferrer">預約一對一諮詢 <i class="fa-regular fa-calendar" aria-hidden="true"></i></a></div><div class="contact-info"><a href="https://line.me/ti/p/ai2RFL-OAT" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-line" aria-hidden="true"></i> 透過 LINE 聯絡我</a><a href="mailto:?subject=合作諮詢｜張穎華"><i class="fa-regular fa-envelope" aria-hidden="true"></i> 寄送合作 Email</a></div></div>
-        <div class="contact-panel reveal"><h3>合作前，先準備這些就好</h3><p>填寫表單時提供幾個方向，能讓後續討論更有效率。</p><div class="contact-options"><a class="contact-option" href="https://forms.gle/tN5DUWCAAWmKz8gG9" target="_blank" rel="noopener noreferrer"><span class="contact-option-main"><span class="contact-option-icon"><i class="fa-solid fa-file-pen" aria-hidden="true"></i></span><span><strong>專案目標</strong><span>想解決什麼問題？</span></span></span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="contact-option" href="https://forms.gle/tN5DUWCAAWmKz8gG9" target="_blank" rel="noopener noreferrer"><span class="contact-option-main"><span class="contact-option-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></span><span><strong>預計時程</strong><span>大約何時需要完成？</span></span></span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="contact-option" href="https://forms.gle/tN5DUWCAAWmKz8gG9" target="_blank" rel="noopener noreferrer"><span class="contact-option-main"><span class="contact-option-icon"><i class="fa-solid fa-image" aria-hidden="true"></i></span><span><strong>參考方向</strong><span>喜歡的風格或案例。</span></span></span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></div>
+        <div class="reveal"><div class="section-heading"><span class="eyebrow">Let's connect</span><h2>與我們取得聯繫，<br /><span style="color: var(--gold);">讓想法開始發生。</span></h2><p>請留下你的需求與方便聯絡的時間，我會依照內容回覆後續合作方式。</p></div><div class="contact-info"><a href="mailto:changyh2211993@gmail.com"><i class="fa-regular fa-envelope" aria-hidden="true"></i> changyh2211993@gmail.com</a><a href="tel:0938662052"><i class="fa-solid fa-phone" aria-hidden="true"></i> 0938 665 205</a><a href="https://line.me/ti/p/ai2RFL-OAT" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-line" aria-hidden="true"></i> 透過 LINE 聯絡我</a></div><div class="contact-actions"><a class="btn btn--outline" href="https://calendar.app.google/BkCQoLMJNLMw4RFDA" target="_blank" rel="noopener noreferrer">預約一對一諮詢 <i class="fa-regular fa-calendar" aria-hidden="true"></i></a></div></div>
+        <div class="contact-panel reveal"><h3>填寫需求表單</h3><p>幾個簡單資訊，就能讓我們更快對焦。</p><form id="contact-form" class="contact-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd2M5igdRMz5inoBsVrE4bR_Wcfr9QjAOtPGj4Q-OFWSTViKw/formResponse" method="post"><div class="contact-form-grid"><div class="form-field"><label for="contact-name">您的姓名／稱呼</label><input id="contact-name" name="entry.588998168" type="text" placeholder="例如：王小姐" autocomplete="name" required /></div><div class="form-field"><label for="contact-email">聯絡電子信箱</label><input id="contact-email" name="entry.476214014" type="email" placeholder="name@example.com" autocomplete="email" required /></div></div><div class="form-field"><label for="contact-service">您的需求</label><select id="contact-service" name="entry.1610329698" required><option value="" disabled selected>請選擇服務項目</option><option>視覺設計</option><option>軟裝布置</option><option>社群行銷</option></select></div><div class="form-field"><label for="contact-message">需求簡介</label><textarea id="contact-message" name="entry.1646642689" placeholder="請簡單說明目前的需求、預計使用情境或想解決的問題……" required></textarea></div><div class="form-field"><label for="contact-time">適合聯絡的時間</label><select id="contact-time" name="entry.1091995575" required><option value="" disabled selected>請選擇方便聯絡的時段</option><option>平日早上 09:00–12:00</option><option>平日下午 13:00–17:00</option><option>平日晚間 18:00–21:00</option><option>週末白天</option><option>時間皆可，請直接與我聯繫</option></select></div><button class="btn btn--primary" type="submit">送出合作需求 <i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button><p class="form-note"><i class="fa-solid fa-lock" aria-hidden="true"></i> 資料會安全送至 Google 表單，不會跳離目前頁面。</p><p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p></form></div>
       </div>
     </section>
   </main>
@@ -339,6 +379,15 @@
       <button id="modal-close" class="modal-close" type="button" aria-label="關閉專案詳情"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
       <div class="modal-image"><img id="modal-image" src="" alt="" /></div>
       <div class="modal-content"><small id="modal-category"></small><h2 id="modal-title"></h2><p id="modal-description"></p><span id="modal-index" class="modal-index"></span><div class="modal-navigation"><button id="modal-prev" type="button"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> 上一個</button><button id="modal-next" type="button">下一個 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div></div>
+    </div>
+  </div>
+
+  <div id="submit-modal" class="submit-modal" aria-hidden="true">
+    <div class="submit-modal-card" role="dialog" aria-modal="true" aria-labelledby="submit-modal-title">
+      <div class="submit-modal-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></div>
+      <h3 id="submit-modal-title">需求已送出</h3>
+      <p>我們將盡快與您聯絡！</p>
+      <button id="submit-modal-close" class="btn btn--primary submit-modal-close" type="button">知道了</button>
     </div>
   </div>
 
@@ -515,6 +564,44 @@
         if (event.key === 'Escape') closeProjectModal();
         if (event.key === 'ArrowLeft') modalPrev.click();
         if (event.key === 'ArrowRight') modalNext.click();
+      });
+
+      const contactForm = document.getElementById('contact-form');
+      const formFeedback = document.getElementById('form-feedback');
+      const submitModal = document.getElementById('submit-modal');
+      const submitModalClose = document.getElementById('submit-modal-close');
+      const closeSubmitModal = () => {
+        submitModal?.classList.remove('is-open');
+        submitModal?.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
+      submitModalClose?.addEventListener('click', closeSubmitModal);
+      submitModal?.addEventListener('click', (event) => { if (event.target === submitModal) closeSubmitModal(); });
+      if (contactForm && formFeedback) {
+        contactForm.addEventListener('submit', async (event) => {
+          event.preventDefault();
+          if (!contactForm.reportValidity()) return;
+          const submitButton = contactForm.querySelector('button[type="submit"]');
+          const payload = new URLSearchParams(new FormData(contactForm));
+          if (submitButton) { submitButton.disabled = true; submitButton.innerHTML = '送出中… <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>'; }
+          try {
+            await fetch(contactForm.action, { method: 'POST', mode: 'no-cors', body: payload, credentials: 'omit' });
+            contactForm.reset();
+            formFeedback.classList.remove('is-visible');
+            submitModal?.classList.add('is-open');
+            submitModal?.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+          } catch (error) {
+            formFeedback.textContent = '目前無法送出，請稍後再試，或直接透過 Email／LINE 聯絡。';
+            formFeedback.classList.add('is-visible');
+          } finally {
+            if (submitButton) { submitButton.disabled = false; submitButton.innerHTML = '送出合作需求 <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>'; }
+          }
+        });
+      }
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && submitModal?.classList.contains('is-open')) closeSubmitModal();
       });
 
       const filterButtons = document.querySelectorAll('.filter-btn');

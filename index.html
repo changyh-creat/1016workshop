@@ -80,6 +80,8 @@
     .hero--video .btn--outline { color: var(--white); border-color: rgba(255,255,255,.42); background: rgba(255,255,255,.08); }
     .hero--video .btn--outline:hover { border-color: #f4d99d; background: rgba(255,255,255,.16); }
     .hero-video-credit { position: absolute; right: 24px; bottom: 24px; z-index: 2; color: rgba(255,255,255,.58); font-size: .65rem; letter-spacing: .08em; }
+    .video-sound-toggle { position: absolute; z-index: 3; right: 24px; bottom: 54px; display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 0 13px; border: 1px solid rgba(255,255,255,.34); border-radius: 999px; color: var(--white); background: rgba(35,45,39,.38); backdrop-filter: blur(10px); cursor: pointer; font-size: .7rem; font-weight: 700; transition: background .2s ease, border-color .2s ease, transform .2s ease; }
+    .video-sound-toggle:hover { border-color: #f4d99d; background: rgba(35,45,39,.65); transform: translateY(-2px); }
     .hero::before { position: absolute; top: 8%; left: 38%; width: 430px; height: 430px; border-radius: 50%; background: radial-gradient(circle, rgba(201,169,106,.14), transparent 66%); content: ""; animation: aura-drift 12s ease-in-out infinite alternate; pointer-events: none; }
     .hero::after { position: absolute; right: -120px; bottom: -180px; width: 500px; height: 500px; border: 1px solid rgba(74,93,82,.12); border-radius: 50%; content: ""; box-shadow: 0 0 0 38px rgba(201,169,106,.07), 0 0 0 78px rgba(74,93,82,.045); }
     .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(340px, .88fr); align-items: center; gap: 80px; }
@@ -304,7 +306,7 @@
 
   <main>
     <section id="home" class="hero hero--video">
-      <div class="hero-video-layer" aria-hidden="true"><iframe src="https://www.youtube.com/embed/pz79VnOOa2I?autoplay=1&mute=1&loop=1&playlist=pz79VnOOa2I&controls=0&rel=0&modestbranding=1&playsinline=1" title="品牌視覺背景影片" allow="autoplay; fullscreen; picture-in-picture"></iframe></div>
+      <div class="hero-video-layer" aria-hidden="true"><iframe id="hero-video" src="https://www.youtube.com/embed/pz79VnOOa2I?autoplay=1&mute=1&loop=1&playlist=pz79VnOOa2I&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1" title="品牌視覺背景影片" allow="autoplay; fullscreen; picture-in-picture"></iframe></div>
       <div class="hero-video-overlay" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="reveal">
@@ -321,6 +323,7 @@
         </div>
       </div>
       <span class="hero-video-credit">MOVING IMAGE · BRAND ATMOSPHERE</span>
+      <button id="video-sound-toggle" class="video-sound-toggle" type="button" aria-label="開啟背景影片聲音" aria-pressed="false"><i class="fa-solid fa-volume-xmark" aria-hidden="true"></i><span>開啟聲音</span></button>
     </section>
 
     <section id="about" class="section">
@@ -399,7 +402,25 @@
       const progress = document.getElementById('scroll-progress');
       const heroArt = document.querySelector('.hero-art');
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const heroVideo = document.getElementById('hero-video');
+      const soundToggle = document.getElementById('video-sound-toggle');
       let ticking = false;
+
+      if (heroVideo && soundToggle) {
+        const soundIcon = soundToggle.querySelector('i');
+        const soundLabel = soundToggle.querySelector('span');
+        let soundOn = false;
+        const sendVideoCommand = (func, args = []) => heroVideo.contentWindow?.postMessage(JSON.stringify({ event: 'command', func, args }), '*');
+        soundToggle.addEventListener('click', () => {
+          soundOn = !soundOn;
+          sendVideoCommand(soundOn ? 'unMute' : 'mute');
+          if (soundOn) sendVideoCommand('setVolume', [100]);
+          soundToggle.setAttribute('aria-pressed', String(soundOn));
+          soundToggle.setAttribute('aria-label', soundOn ? '關閉背景影片聲音' : '開啟背景影片聲音');
+          soundLabel.textContent = soundOn ? '關閉聲音' : '開啟聲音';
+          soundIcon.className = soundOn ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark';
+        });
+      }
 
       const updateScrollUI = () => {
         const scrollTop = window.scrollY;

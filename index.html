@@ -3,957 +3,537 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f8fbff" />
-  <meta name="description" content="張穎華 Ying-Hua Chang｜067淬。以全貌思維整合視覺設計、品牌企劃與 AI 敏捷賦能，打造精準且具商業價值的品牌體驗。" />
-  <title>張穎華 Ying-Hua Chang｜067淬 — Personal Brand</title>
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome icons -->
+  <meta name="theme-color" content="#4a5d52" />
+  <meta name="description" content="張穎華｜視覺設計、品牌整合與空間美學，將想法整理成清晰而有辨識度的品牌體驗。" />
+  <title>張穎華｜視覺設計與品牌整合</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: { blue: '#4a5d52', violet: '#c9a96a', mint: '#a7b7c6', ink: '#333333', mist: '#ede7dd' }
-          },
-          fontFamily: {
-            sans: ['Inter', 'Noto Sans TC', 'sans-serif']
-          },
-          boxShadow: {
-            soft: '0 18px 60px rgba(37, 99, 235, 0.08)',
-            float: '0 24px 70px rgba(37, 99, 235, 0.14)'
-          }
-        }
-      }
-    };
-  </script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;800&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --blue: #2563eb;
-      --violet: #7c3aed;
-      --mint: #10b981;
-      --ink: #172033;
-      --muted: #64748b;
-      --line: rgba(148, 163, 184, .24);
-      --surface: rgba(255, 255, 255, .72);
+      --green: #4a5d52;
+      --green-dark: #34463d;
+      --ivory: #ede7dd;
+      --gold: #c9a96a;
+      --ink: #333333;
+      --muted: #737773;
+      --line: rgba(74, 93, 82, .18);
+      --paper: #fbfaf7;
+      --white: #ffffff;
+      --shadow: 0 18px 55px rgba(74, 93, 82, .10);
+      --radius-lg: 28px;
+      --radius-md: 18px;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      font-family: Inter, "Noto Sans TC", system-ui, sans-serif;
-      background: linear-gradient(135deg, #ffffff 0%, #f8fbff 48%, #f7f9ff 100%);
-      overflow-x: hidden;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: -20%;
-      z-index: -3;
-      pointer-events: none;
-      background:
-        radial-gradient(ellipse at 12% 18%, rgba(96, 165, 250, .17), transparent 32%),
-        radial-gradient(ellipse at 83% 23%, rgba(167, 139, 250, .13), transparent 30%),
-        radial-gradient(ellipse at 62% 82%, rgba(110, 231, 183, .10), transparent 31%);
-      animation: aura-drift 22s ease-in-out infinite alternate;
-    }
-    .grid-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      pointer-events: none;
-      opacity: .32;
-      background-image: linear-gradient(rgba(148, 163, 184, .10) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, .10) 1px, transparent 1px);
-      background-size: 56px 56px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,.65), transparent 88%);
-    }
-    #particle-canvas { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; opacity: .76; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: "Noto Sans TC", Inter, sans-serif; line-height: 1.7; }
+    ::selection { color: var(--white); background: var(--green); }
     a { color: inherit; text-decoration: none; }
-    button, input, select, textarea { font: inherit; }
+    button, input, textarea, select { font: inherit; }
     button, a { -webkit-tap-highlight-color: transparent; }
-    ::selection { color: #1e3a8a; background: rgba(191, 219, 254, .72); }
-    .page-shell { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
-    .section-pad { padding-block: 112px; }
-    .section-kicker { display: inline-flex; align-items: center; gap: 10px; color: var(--blue); font-size: .72rem; font-weight: 800; letter-spacing: .19em; text-transform: uppercase; }
-    .section-kicker::before { content: ""; width: 28px; height: 1px; background: linear-gradient(90deg, var(--blue), var(--violet)); }
-    .section-title { font-size: clamp(2rem, 4.4vw, 3.5rem); line-height: 1.17; letter-spacing: -.055em; font-weight: 700; }
-    .gradient-text { background: linear-gradient(105deg, #2563eb 0%, #6d55df 54%, #0f9f86 100%); color: transparent; -webkit-background-clip: text; background-clip: text; }
-    .muted-copy { color: #64748b; line-height: 1.95; }
-    .glass-panel {
-      background: var(--surface);
-      border: 1px solid rgba(255,255,255,.9);
-      box-shadow: 0 16px 54px rgba(30, 64, 175, .065), inset 0 1px 0 rgba(255,255,255,.95);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-    }
-    .interactive-card { position: relative; isolation: isolate; transition: transform .38s cubic-bezier(.2,.8,.2,1), box-shadow .38s ease, border-color .38s ease; }
-    .interactive-card::after { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; padding: 1px; background: linear-gradient(130deg, rgba(37,99,235,.0), rgba(124,58,237,.0), rgba(16,185,129,.0)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; transition: background .35s ease; pointer-events: none; }
-    .interactive-card:hover { transform: translateY(-7px); box-shadow: 0 25px 70px rgba(37,99,235,.12); border-color: rgba(147, 197, 253, .65); }
-    .interactive-card:hover::after { background: linear-gradient(130deg, rgba(37,99,235,.72), rgba(124,58,237,.55), rgba(16,185,129,.42)); }
-    .eyebrow-line { display: flex; align-items: center; gap: 12px; color: #64748b; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; }
-    .eyebrow-line::after { content: ""; height: 1px; flex: 1; background: linear-gradient(90deg, rgba(148,163,184,.42), transparent); }
-    .nav-glass { background: rgba(255,255,255,.76); border-bottom: 1px solid rgba(226,232,240,.75); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); }
-    .nav-link { position: relative; color: #64748b; transition: color .2s ease; }
-    .nav-link::after { content: ""; position: absolute; height: 2px; left: 0; right: 100%; bottom: -7px; border-radius: 99px; background: linear-gradient(90deg, var(--blue), var(--violet)); transition: right .25s ease; }
-    .nav-link:hover, .nav-link.active { color: #1d4ed8; }
-    .nav-link:hover::after, .nav-link.active::after { right: 0; }
-    .primary-button { display: inline-flex; justify-content: center; align-items: center; gap: 10px; padding: 13px 19px; border-radius: 999px; background: linear-gradient(110deg, #2563eb, #6d5ce7); color: white; font-size: .88rem; font-weight: 700; box-shadow: 0 10px 28px rgba(37,99,235,.19); transition: transform .25s ease, box-shadow .25s ease, filter .25s ease; }
-    .primary-button:hover { transform: translateY(-2px); box-shadow: 0 15px 34px rgba(37,99,235,.25); filter: saturate(1.08); }
-    .secondary-button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 18px; border: 1px solid rgba(148,163,184,.36); border-radius: 999px; background: rgba(255,255,255,.6); color: #334155; font-size: .88rem; font-weight: 650; transition: all .25s ease; }
-    .secondary-button:hover { border-color: rgba(37,99,235,.38); background: white; color: var(--blue); transform: translateY(-2px); }
-    .status-button { position: relative; overflow: visible; display: inline-flex; align-items: center; gap: 11px; min-height: 52px; padding: 13px 19px; border: 1px solid transparent; border-radius: 999px; background: linear-gradient(rgba(255,255,255,.82), rgba(255,255,255,.82)) padding-box, linear-gradient(115deg, rgba(37,99,235,.85), rgba(124,58,237,.7)) border-box; color: #1d4ed8; box-shadow: 0 12px 32px rgba(37,99,235,.08); font-size: .88rem; font-weight: 700; transition: color .3s ease, background .3s ease, box-shadow .3s ease, transform .3s ease; }
-    .status-button .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 4px rgba(37,99,235,.09); transition: all .3s ease; }
-    .status-button .status-label { white-space: nowrap; }
-    .status-button:hover, .status-button:focus-visible { background: linear-gradient(rgba(236,253,245,.96), rgba(236,253,245,.96)) padding-box, linear-gradient(115deg, #10b981, #34d399) border-box; color: #047857; box-shadow: 0 12px 35px rgba(16,185,129,.16); transform: translateY(-2px); outline: none; }
-    .status-button:hover .status-dot, .status-button:focus-visible .status-dot { background: var(--mint); box-shadow: 0 0 0 5px rgba(16,185,129,.13), 0 0 14px rgba(16,185,129,.4); }
-    .status-tooltip { position: absolute; z-index: 5; top: calc(100% + 10px); left: 50%; transform: translate(-50%, -4px); padding: 8px 12px; border: 1px solid rgba(16,185,129,.22); border-radius: 10px; background: rgba(255,255,255,.96); box-shadow: 0 10px 30px rgba(16,185,129,.12); color: #047857; font-size: .72rem; white-space: nowrap; opacity: 0; visibility: hidden; transition: opacity .2s ease, transform .2s ease, visibility .2s ease; }
-    .status-button:hover .status-tooltip, .status-button:focus-visible .status-tooltip { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
-    .hero-orb { position: absolute; border-radius: 999px; filter: blur(1px); pointer-events: none; }
-    .hero-orb.one { width: 280px; height: 280px; right: 2%; top: 9%; background: radial-gradient(circle at 35% 35%, rgba(191,219,254,.38), rgba(196,181,253,.10) 55%, transparent 72%); animation: float 9s ease-in-out infinite; }
-    .hero-orb.two { width: 180px; height: 180px; right: 25%; bottom: 8%; background: radial-gradient(circle, rgba(167,243,208,.24), transparent 70%); animation: float 11s ease-in-out infinite reverse; }
-    .hero-copy { max-width: 760px; }
-    .typewriter-text { display: inline; }
-    .type-caret { display: inline-block; width: 2px; height: .86em; margin-left: 5px; vertical-align: -.02em; background: #647df4; animation: blink 1s steps(2, start) infinite; }
-    .tag-pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 11px; border: 1px solid rgba(203,213,225,.68); border-radius: 999px; background: rgba(255,255,255,.66); color: #526178; font-size: .75rem; font-weight: 600; transition: all .22s ease; }
-    .tag-pill:hover { border-color: rgba(37,99,235,.28); color: #1d4ed8; background: rgba(239,246,255,.82); transform: translateY(-2px); }
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .section { padding: 112px 0; }
+    .section--soft { background: var(--ivory); }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--green); font-size: .72rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--gold); }
+    .section-heading { max-width: 650px; }
+    .section-heading h2 { margin: 16px 0 0; font-family: "Noto Serif TC", "Noto Sans TC", serif; font-size: clamp(2rem, 4vw, 3.45rem); line-height: 1.35; letter-spacing: -.07em; font-weight: 600; }
+    .section-heading p { margin: 20px 0 0; color: var(--muted); font-size: .98rem; line-height: 2; }
+    .highlight { color: var(--green); background: linear-gradient(110deg, var(--green) 20%, var(--gold) 45%, var(--green) 70%); background-size: 220% auto; color: transparent; -webkit-background-clip: text; background-clip: text; animation: text-shimmer 7s linear infinite; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 20px; border: 1px solid transparent; border-radius: 999px; font-size: .88rem; font-weight: 700; transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn--primary { color: var(--white); background: var(--green); box-shadow: 0 12px 28px rgba(74,93,82,.2); }
+    .btn--primary:hover { background: var(--green-dark); box-shadow: 0 15px 34px rgba(74,93,82,.28); }
+    .btn--outline { color: var(--green); border-color: var(--line); background: rgba(255,255,255,.72); }
+    .btn--outline:hover { border-color: var(--gold); background: var(--white); }
+    .site-header { position: fixed; z-index: 20; top: 0; right: 0; left: 0; border-bottom: 1px solid rgba(74,93,82,.12); background: rgba(251,250,247,.88); backdrop-filter: blur(18px); }
+    .site-header.is-scrolled { background: rgba(251,250,247,.96); box-shadow: 0 8px 30px rgba(74,93,82,.09); }
+    .scroll-progress { position: fixed; z-index: 30; top: 0; left: 0; width: 0; height: 3px; background: var(--gold); transition: width .08s linear; }
+    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 76px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 800; }
+    .brand-mark { display: grid; width: 40px; height: 40px; place-items: center; border-radius: 13px; color: var(--white); background: var(--green); font-size: .86rem; letter-spacing: -.1em; }
+    .brand-copy small { display: block; margin-top: 1px; color: var(--muted); font-size: .62rem; font-weight: 600; letter-spacing: .13em; }
+    .nav-links { display: flex; align-items: center; gap: 28px; color: var(--muted); font-size: .83rem; font-weight: 600; }
+    .nav-links a { position: relative; padding: 8px 0; }
+    .nav-links a::after { position: absolute; right: 100%; bottom: 1px; left: 0; height: 2px; border-radius: 4px; background: var(--gold); content: ""; transition: right .25s ease; }
+    .nav-links a:hover, .nav-links a.is-current { color: var(--green); }
+    .nav-links a:hover::after, .nav-links a.is-current::after { right: 0; }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .menu-toggle { display: none; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 12px; color: var(--green); background: var(--white); }
+    .mobile-menu { display: none; padding: 12px 20px 18px; border-top: 1px solid rgba(74,93,82,.1); background: var(--paper); }
+    .mobile-menu.is-open { display: grid; gap: 4px; }
+    .mobile-menu a { padding: 11px 4px; color: var(--muted); font-size: .9rem; font-weight: 600; }
+    .hero { position: relative; min-height: 720px; display: grid; align-items: center; padding: 150px 0 90px; overflow: hidden; background: linear-gradient(120deg, var(--paper) 0%, #f5f1e9 55%, #e7eee9 100%); }
+    .hero::before { position: absolute; top: 8%; left: 38%; width: 430px; height: 430px; border-radius: 50%; background: radial-gradient(circle, rgba(201,169,106,.14), transparent 66%); content: ""; animation: aura-drift 12s ease-in-out infinite alternate; pointer-events: none; }
+    .hero::after { position: absolute; right: -120px; bottom: -180px; width: 500px; height: 500px; border: 1px solid rgba(74,93,82,.12); border-radius: 50%; content: ""; box-shadow: 0 0 0 38px rgba(201,169,106,.07), 0 0 0 78px rgba(74,93,82,.045); }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(340px, .88fr); align-items: center; gap: 80px; }
+    .hero h1 { max-width: 730px; margin: 22px 0 0; font-family: "Noto Serif TC", "Noto Sans TC", serif; font-size: clamp(2.8rem, 6vw, 5.4rem); line-height: 1.28; letter-spacing: -.09em; font-weight: 600; }
+    .hero-lead { max-width: 620px; margin: 24px 0 0; color: var(--muted); font-size: 1.05rem; line-height: 2; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .hero-note { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 30px; color: var(--muted); font-size: .75rem; }
+    .hero-note span { display: inline-flex; align-items: center; gap: 7px; }
+    .hero-note i { color: var(--gold); }
     .hero-art { position: relative; min-height: 420px; }
-    .orbit { position: absolute; left: 50%; top: 49%; border: 1px solid rgba(96,165,250,.24); border-radius: 50%; transform: translate(-50%,-50%) rotate(-18deg); }
-    .orbit.a { width: 330px; height: 220px; }
-    .orbit.b { width: 420px; height: 282px; transform: translate(-50%,-50%) rotate(34deg); border-color: rgba(167,139,250,.21); }
-    .orbit.c { width: 500px; height: 340px; transform: translate(-50%,-50%) rotate(-42deg); border-style: dashed; border-color: rgba(148,163,184,.23); }
-    .art-core { position: absolute; left: 50%; top: 49%; width: 184px; height: 184px; transform: translate(-50%,-50%); border-radius: 44px; display: grid; place-items: center; background: linear-gradient(145deg, rgba(255,255,255,.94), rgba(239,246,255,.73)); border: 1px solid rgba(255,255,255,.98); box-shadow: 0 30px 80px rgba(79,70,229,.14), inset 0 0 0 1px rgba(147,197,253,.22); animation: float 7s ease-in-out infinite; }
-    .art-core::before { content: ""; position: absolute; inset: 15px; border-radius: 33px; border: 1px solid rgba(147,197,253,.33); }
-    .art-core-mark { font-size: 4.2rem; font-weight: 800; letter-spacing: -.12em; line-height: 1; background: linear-gradient(145deg, #2563eb, #8b5cf6 66%, #10b981); -webkit-background-clip: text; color: transparent; transform: translateX(-3px); }
-    .float-chip { position: absolute; display: flex; align-items: center; gap: 9px; border: 1px solid rgba(255,255,255,.95); background: rgba(255,255,255,.82); box-shadow: 0 12px 32px rgba(30,64,175,.09); backdrop-filter: blur(14px); border-radius: 14px; padding: 11px 13px; color: #475569; font-size: .76rem; font-weight: 650; animation: float 8s ease-in-out infinite; }
-    .float-chip i { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 10px; background: #eff6ff; color: #2563eb; }
-    .float-chip.chip-one { top: 16%; left: 0%; }
-    .float-chip.chip-two { right: -1%; top: 29%; animation-delay: -2s; }
-    .float-chip.chip-three { left: 7%; bottom: 16%; animation-delay: -4s; }
-    .float-chip.chip-four { right: 2%; bottom: 12%; animation-delay: -1s; }
-    .hero-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(148,163,184,.4), transparent); }
-    .value-number { font-size: .75rem; font-weight: 800; letter-spacing: .12em; color: #94a3b8; }
-    .icon-tile { width: 49px; height: 49px; display: grid; place-items: center; border-radius: 16px; background: linear-gradient(140deg, #eff6ff, #f5f3ff); color: #4169df; border: 1px solid rgba(255,255,255,.95); box-shadow: inset 0 1px 0 white; font-size: 1.1rem; }
-    .value-card { min-height: 250px; }
-    .capability-card { min-height: 310px; }
-    .tool-chip { display: inline-flex; align-items: center; padding: 6px 9px; border-radius: 8px; border: 1px solid rgba(226,232,240,.9); background: rgba(248,250,252,.78); color: #64748b; font-size: .69rem; font-weight: 600; }
-    .portfolio-filter { padding: 9px 14px; border-radius: 999px; color: #64748b; border: 1px solid transparent; background: transparent; font-size: .81rem; font-weight: 650; transition: all .22s ease; }
-    .portfolio-filter:hover { color: #2563eb; background: rgba(239,246,255,.8); }
-    .portfolio-filter.active { background: white; border-color: rgba(191,219,254,.9); box-shadow: 0 5px 18px rgba(37,99,235,.08); color: #1d4ed8; }
-    .portfolio-card { overflow: hidden; border-radius: 22px; }
-    .portfolio-card.is-hidden { display: none; }
-    .portfolio-visual { position: relative; height: 238px; overflow: hidden; background: #f1f5f9; border-bottom: 1px solid rgba(226,232,240,.75); }
-    .portfolio-visual::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 15% 10%, rgba(255,255,255,.88), transparent 30%); z-index: 1; pointer-events: none; }
-    .mock-window { position: absolute; inset: 23px 30px; padding: 11px; border-radius: 14px; border: 1px solid rgba(255,255,255,.86); background: rgba(255,255,255,.62); box-shadow: 0 18px 42px rgba(15,23,42,.13); transform: rotate(-2deg); transition: transform .55s cubic-bezier(.2,.8,.2,1); }
-    .portfolio-card:hover .mock-window { transform: rotate(0deg) translateY(-4px) scale(1.015); }
-    .mock-browserbar { display: flex; gap: 4px; align-items: center; padding: 0 2px 8px; }
-    .mock-browserbar span { width: 5px; height: 5px; border-radius: 50%; background: #cbd5e1; }
-    .mock-art { position: relative; height: calc(100% - 15px); overflow: hidden; border-radius: 8px; }
-    .mock-title { position: absolute; z-index: 2; color: white; font-size: clamp(1.1rem,2vw,1.9rem); line-height: .94; font-weight: 800; letter-spacing: -.075em; }
-    .visual-summer { background: linear-gradient(135deg, #fbc9aa, #f28e76 54%, #8b3f67); }
-    .visual-summer .sun { position: absolute; width: 110px; height: 110px; border-radius: 50%; background: #ffe8aa; right: 13%; top: 10%; box-shadow: 0 0 0 13px rgba(255,232,170,.16), 0 0 65px rgba(255,232,170,.6); }
-    .visual-summer .swoosh { position: absolute; width: 180px; height: 120px; border: 18px solid rgba(255,255,255,.52); border-left-color: transparent; border-bottom-color: transparent; border-radius: 50%; right: -3%; bottom: -17%; transform: rotate(27deg); }
-    .visual-summer .mock-title { left: 8%; bottom: 11%; }
-    .visual-summer .tiny-copy { position: absolute; bottom: 7%; right: 9%; color: white; font-size: .46rem; letter-spacing: .15em; }
-    .visual-product { background: linear-gradient(135deg, #dbeafe, #eef2ff 55%, #d1fae5); }
-    .visual-product .product-shadow { position: absolute; width: 58%; height: 18%; left: 21%; bottom: 13%; border-radius: 50%; background: rgba(71,85,105,.19); filter: blur(11px); }
-    .visual-product .bottle { position: absolute; left: 39%; top: 17%; width: 22%; height: 63%; border-radius: 21px 21px 15px 15px; background: linear-gradient(90deg, #b8c6a9, #eff7df 42%, #8ca98e); box-shadow: inset 7px 0 12px rgba(255,255,255,.5), inset -6px 0 9px rgba(15,23,42,.1), 0 15px 23px rgba(51,65,85,.15); }
-    .visual-product .bottle::before { content: ""; position: absolute; width: 40%; height: 13%; left: 30%; top: -11%; border-radius: 5px 5px 2px 2px; background: linear-gradient(90deg,#7d8f7e,#d8e6ce,#778b7d); }
-    .visual-product .bottle::after { content: "YH\A BOTANICAL\A STUDIO"; white-space: pre; position: absolute; left: 13%; right: 13%; top: 36%; padding: 8px 2px; text-align: center; font-size: .36rem; letter-spacing: .06em; line-height: 1.8; color: #46614c; border-block: 1px solid rgba(70,97,76,.35); }
-    .visual-brand { background: linear-gradient(140deg, #e7e5ff, #fdf2f8 57%, #dbeafe); }
-    .visual-brand .brand-card { position: absolute; left: 11%; top: 13%; width: 42%; height: 72%; background: #fbf8f2; border-radius: 5px; box-shadow: 0 12px 25px rgba(55,48,163,.13); transform: rotate(-8deg); padding: 12px; }
-    .visual-brand .brand-card::before { content: "067"; font-family: Georgia,serif; font-size: 2.6rem; letter-spacing: -.1em; color: #292c56; }
-    .visual-brand .brand-card::after { content: "VISUAL CULTURE\A BRAND SYSTEM"; white-space: pre; display: block; margin-top: 8px; color: #64648b; font-size: .36rem; letter-spacing: .14em; line-height: 2; }
-    .visual-brand .brand-circle { position: absolute; right: 10%; top: 20%; width: 94px; height: 94px; border-radius: 50%; background: conic-gradient(from 30deg, #8b5cf6, #60a5fa, #a7f3d0, #8b5cf6); opacity: .85; box-shadow: 0 13px 30px rgba(99,102,241,.19); }
-    .visual-brand .brand-circle::after { content: "YH"; position: absolute; inset: 15px; border-radius: 50%; display: grid; place-items: center; background: #f8f7ff; color: #4f46e5; font-size: 1.25rem; font-weight: 800; }
-    .visual-editorial { background: linear-gradient(135deg, #dbeafe, #f0f9ff 50%, #ede9fe); }
-    .visual-editorial .paper { position: absolute; left: 14%; top: 11%; width: 72%; height: 80%; background: #fff; padding: 17px 15px; box-shadow: 0 13px 30px rgba(30,64,175,.1); transform: rotate(3deg); }
-    .visual-editorial .paper .big { font-size: 1.7rem; letter-spacing: -.12em; line-height: .9; font-weight: 800; color: #27416a; }
-    .visual-editorial .paper .block { height: 5px; margin-top: 9px; width: 70%; background: #c7d2fe; }
-    .visual-editorial .paper .line { height: 3px; width: 95%; margin-top: 5px; background: #e2e8f0; }
-    .visual-campaign { background: linear-gradient(135deg, #fef3c7, #ffedd5 47%, #fbcfe8); }
-    .visual-campaign .circle-one { position: absolute; width: 150px; height: 150px; border-radius: 50%; left: 13%; top: 13%; background: linear-gradient(140deg,#fb7185,#f97316); box-shadow: 0 18px 35px rgba(244,63,94,.2); }
-    .visual-campaign .circle-two { position: absolute; width: 90px; height: 90px; right: 12%; bottom: 10%; border-radius: 50%; background: #fde68a; box-shadow: 0 10px 23px rgba(217,119,6,.17); }
-    .visual-campaign .mock-title { left: 14%; bottom: 13%; color: #7c2d12; font-size: 1.8rem; }
-    .visual-identity { background: linear-gradient(135deg, #d1fae5, #effdf5 48%, #dbeafe); }
-    .visual-identity .identity-block { position: absolute; width: 42%; height: 63%; top: 16%; left: 9%; border-radius: 7px; background: #fcfaf5; box-shadow: 0 13px 30px rgba(6,95,70,.13); transform: rotate(-5deg); display: grid; place-items: center; }
-    .visual-identity .identity-block b { font-size: 3.2rem; color: #16665b; letter-spacing: -.1em; font-weight: 800; }
-    .visual-identity .identity-side { position: absolute; width: 33%; height: 49%; right: 10%; top: 22%; background: linear-gradient(145deg,#0f766e,#115e59); box-shadow: 0 13px 30px rgba(6,95,70,.18); transform: rotate(7deg); }
-    .visual-identity .identity-side::after { content: "FORM\A & FUNCTION"; white-space: pre; position: absolute; left: 12%; bottom: 14%; color: white; font-size: .42rem; line-height: 1.8; letter-spacing: .1em; }
-    .impact-tag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 8px; border-radius: 7px; color: #047857; background: rgba(209,250,229,.6); font-size: .67rem; font-weight: 700; }
-    .impact-tag.blue { color: #1d4ed8; background: rgba(219,234,254,.7); }
-    .form-control { width: 100%; padding: 13px 14px; color: #1e293b; border: 1px solid rgba(203,213,225,.8); border-radius: 13px; background: rgba(255,255,255,.75); outline: none; transition: border-color .2s ease, box-shadow .2s ease, background .2s ease; font-size: .88rem; }
-    .form-control::placeholder { color: #a0aec0; }
-    .form-control:focus { border-color: rgba(37,99,235,.5); background: white; box-shadow: 0 0 0 4px rgba(37,99,235,.08); }
-    .faq-item { border-bottom: 1px solid rgba(226,232,240,.88); }
-    .faq-item summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; list-style: none; cursor: pointer; padding: 19px 0; font-size: .9rem; font-weight: 650; color: #334155; }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary i { color: #6474d9; transition: transform .25s ease; }
-    .faq-item[open] summary i { transform: rotate(45deg); }
-    .faq-answer { padding: 0 28px 19px 0; color: #64748b; line-height: 1.9; font-size: .85rem; }
-    .social-link { width: 42px; height: 42px; border-radius: 13px; display: grid; place-items: center; border: 1px solid rgba(203,213,225,.7); background: rgba(255,255,255,.7); color: #64748b; transition: all .22s ease; }
-    .social-link:hover { background: white; color: #2563eb; border-color: rgba(147,197,253,.85); transform: translateY(-3px); box-shadow: 0 8px 22px rgba(37,99,235,.09); }
-    .toast { position: fixed; z-index: 100; right: 22px; bottom: 22px; max-width: min(420px, calc(100vw - 44px)); padding: 14px 17px; border: 1px solid rgba(191,219,254,.8); border-radius: 14px; background: rgba(255,255,255,.95); box-shadow: 0 18px 55px rgba(30,64,175,.16); color: #334155; font-size: .85rem; line-height: 1.6; opacity: 0; transform: translateY(12px); pointer-events: none; transition: all .28s ease; }
-    .toast.visible { opacity: 1; transform: translateY(0); }
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
-    .reveal.revealed { opacity: 1; transform: translateY(0); }
-    .delay-1 { transition-delay: .08s; } .delay-2 { transition-delay: .16s; } .delay-3 { transition-delay: .24s; }
-    #resume-printable { display: none; }
-    @keyframes blink { to { visibility: hidden; } }
-    @keyframes float { 0%,100% { translate: 0 0; } 50% { translate: 0 -11px; } }
-    @keyframes aura-drift { 0% { transform: translate3d(-1%,0,0) scale(1); } 100% { transform: translate3d(1.5%,1%,0) scale(1.04); } }
-    @media (max-width: 1023px) {
-      .section-pad { padding-block: 88px; }
-      .hero-art { min-height: 380px; max-width: 540px; width: 100%; margin-inline: auto; }
-      .orbit.c { width: 440px; }
-      .float-chip.chip-one { left: 4%; }
-      .float-chip.chip-two { right: 4%; }
+    .hero-card { position: absolute; border: 1px solid rgba(255,255,255,.9); border-radius: var(--radius-lg); background: rgba(255,255,255,.68); box-shadow: var(--shadow); backdrop-filter: blur(14px); }
+    .hero-card--main { inset: 35px 34px 30px 36px; display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; background: linear-gradient(145deg, rgba(74,93,82,.98), rgba(52,70,61,.95)); color: var(--white); overflow: hidden; animation: card-breathe 7s ease-in-out infinite; }
+    .hero-card--main::before { position: absolute; top: -80px; right: -80px; width: 260px; height: 260px; border: 1px solid rgba(255,255,255,.22); border-radius: 50%; content: ""; box-shadow: 0 0 0 30px rgba(255,255,255,.04), 0 0 0 60px rgba(255,255,255,.04); }
+    .hero-card--main .number { position: relative; font-size: 7.4rem; line-height: .9; letter-spacing: -.14em; font-weight: 800; color: rgba(255,255,255,.12); }
+    .hero-card--main h2 { position: relative; max-width: 240px; margin: 18px 0 0; font-size: 1.55rem; line-height: 1.4; }
+    .hero-card--main p { position: relative; margin: 8px 0 0; color: rgba(255,255,255,.68); font-size: .78rem; }
+    .hero-card--tag { z-index: 2; top: 4px; right: 0; padding: 12px 15px; color: var(--green); font-size: .72rem; font-weight: 700; animation: tag-float 5s ease-in-out infinite; }
+    .hero-card--tag i { margin-right: 7px; color: var(--gold); }
+    .hero-card--tag-bottom { z-index: 2; bottom: 0; left: 0; padding: 13px 16px; color: var(--muted); font-size: .72rem; animation: tag-float 6s ease-in-out -2s infinite; }
+    .hero-card--tag-bottom strong { display: block; color: var(--green); font-size: .8rem; }
+    .hero-art { will-change: transform; transition: transform .25s ease-out; }
+    .about-grid { display: grid; grid-template-columns: minmax(320px, .84fr) minmax(0, 1.16fr); align-items: center; gap: 80px; }
+    .portrait-frame { position: relative; max-width: 430px; margin: 0 auto; padding: 12px; border-radius: 32px; background: var(--green); box-shadow: 20px 24px 0 rgba(201,169,106,.35); }
+    .portrait-frame::before { position: absolute; top: 28px; left: -25px; width: 54px; height: 54px; border: 1px solid var(--gold); border-radius: 50%; content: ""; }
+    .portrait-frame img { display: block; width: 100%; aspect-ratio: 4 / 5; border-radius: 23px; object-fit: cover; object-position: center top; }
+    .portrait-caption { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 17px 5px 4px; color: var(--white); }
+    .portrait-caption strong { display: block; font-size: 1rem; }
+    .portrait-caption small { display: block; margin-top: 2px; color: rgba(255,255,255,.66); font-size: .64rem; letter-spacing: .12em; }
+    .portrait-caption i { color: var(--gold); }
+    .about-copy h2 { margin: 16px 0 0; font-family: "Noto Serif TC", "Noto Sans TC", serif; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.4; letter-spacing: -.07em; font-weight: 600; }
+    .about-copy > p { margin: 24px 0 0; color: var(--muted); font-size: .97rem; line-height: 2.05; }
+    .about-points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 30px; }
+    .about-point { padding: 16px; border-top: 1px solid var(--line); }
+    .about-point i { color: var(--gold); font-size: 1.1rem; }
+    .about-point strong { display: block; margin-top: 9px; font-size: .84rem; }
+    .about-point span { display: block; margin-top: 4px; color: var(--muted); font-size: .72rem; line-height: 1.6; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 52px; }
+    .service-card { min-height: 275px; padding: 28px; border: 1px solid rgba(255,255,255,.95); border-radius: var(--radius-md); background: rgba(255,255,255,.68); box-shadow: 0 12px 34px rgba(74,93,82,.06); transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+    .service-card:hover { transform: translateY(-7px); border-color: rgba(201,169,106,.65); box-shadow: var(--shadow); }
+    .service-icon { display: grid; width: 50px; height: 50px; place-items: center; border-radius: 16px; color: var(--green); background: var(--ivory); font-size: 1.1rem; }
+    .service-card small { display: block; margin-top: 24px; color: var(--gold); font-size: .67rem; font-weight: 800; letter-spacing: .15em; }
+    .service-card h3 { margin: 7px 0 0; font-size: 1.25rem; }
+    .service-card p { margin: 12px 0 0; color: var(--muted); font-size: .83rem; line-height: 1.9; }
+    .work-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; }
+    .filter-list { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+    .filter-btn { padding: 9px 14px; border: 1px solid transparent; border-radius: 999px; color: var(--muted); background: transparent; cursor: pointer; font-size: .77rem; font-weight: 700; transition: all .2s ease; }
+    .filter-btn:hover, .filter-btn.is-active { color: var(--green); border-color: var(--line); background: var(--white); }
+    .project-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; margin-top: 48px; }
+    .project-card { grid-column: span 4; overflow: hidden; border: 1px solid rgba(74,93,82,.12); border-radius: var(--radius-md); background: var(--white); box-shadow: 0 10px 30px rgba(74,93,82,.05); transition: transform .3s ease, box-shadow .3s ease; transform-style: preserve-3d; will-change: transform; }
+    .project-card { cursor: pointer; }
+    .project-card:nth-child(1), .project-card:nth-child(3) { grid-column: span 5; }
+    .project-card:nth-child(2), .project-card:nth-child(4), .project-card:nth-child(5) { grid-column: span 4; }
+    .project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .project-card.is-hidden { display: none; }
+    .project-image { position: relative; height: 280px; overflow: hidden; background: var(--ivory); }
+    .project-image::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 52%, rgba(39,51,44,.22)); content: ""; pointer-events: none; transition: opacity .3s ease; }
+    .project-image::before { position: absolute; z-index: 2; top: 0; left: 0; width: 42%; height: 180%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent); content: ""; transform: translateX(-150%) rotate(18deg); transition: transform .8s ease; pointer-events: none; }
+    .project-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
+    .project-card:hover .project-image img { transform: scale(1.045); }
+    .project-card:hover .project-image::before { transform: translateX(340%) rotate(18deg); }
+    .project-card:hover .project-image::after { opacity: .45; }
+    .project-card .project-meta { transition: background .25s ease; }
+    .project-card:hover .project-meta { background: #fffdf9; }
+    .project-card:focus-visible, .service-card:focus-visible { outline: 3px solid rgba(201,169,106,.62); outline-offset: 5px; }
+    .project-open-label { display: inline-flex; align-items: center; gap: 7px; margin-top: 14px; color: var(--green); font-size: .7rem; font-weight: 800; opacity: .7; transition: opacity .2s ease, gap .2s ease; }
+    .project-card:hover .project-open-label { gap: 10px; opacity: 1; }
+    .service-card { cursor: pointer; }
+    .service-card::after { display: block; margin-top: 18px; color: var(--gold); content: "探索服務  →"; font-size: .7rem; font-weight: 800; letter-spacing: .05em; opacity: 0; transform: translateY(5px); transition: opacity .25s ease, transform .25s ease; }
+    .service-card:hover::after, .service-card.is-expanded::after { opacity: 1; transform: none; }
+    .service-card.is-expanded { border-color: var(--gold); background: var(--white); }
+    .service-card.is-expanded p { color: var(--green-dark); }
+    .modal-backdrop { position: fixed; z-index: 60; inset: 0; display: grid; place-items: center; padding: 24px; background: rgba(35,45,39,.72); opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility .3s ease; }
+    .modal-backdrop.is-open { opacity: 1; visibility: visible; }
+    .project-modal { position: relative; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(260px, .92fr); width: min(940px, 100%); max-height: min(700px, calc(100vh - 48px)); overflow: hidden; border-radius: 26px; background: var(--paper); box-shadow: 0 30px 100px rgba(0,0,0,.28); transform: translateY(20px) scale(.97); transition: transform .35s cubic-bezier(.2,.8,.2,1); }
+    .modal-backdrop.is-open .project-modal { transform: none; }
+    .modal-image { min-height: 420px; background: var(--ivory); }
+    .modal-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .modal-content { display: flex; flex-direction: column; justify-content: center; padding: 44px; }
+    .modal-content small { color: var(--gold); font-size: .68rem; font-weight: 800; letter-spacing: .15em; }
+    .modal-content h2 { margin: 12px 0 0; font-family: "Noto Serif TC", "Noto Sans TC", serif; font-size: clamp(1.7rem, 4vw, 2.45rem); line-height: 1.35; font-weight: 600; }
+    .modal-content p { margin: 18px 0 0; color: var(--muted); font-size: .88rem; line-height: 2; }
+    .modal-close { position: absolute; z-index: 2; top: 16px; right: 16px; display: grid; width: 40px; height: 40px; place-items: center; border: 1px solid rgba(74,93,82,.16); border-radius: 50%; color: var(--green); background: rgba(255,255,255,.86); cursor: pointer; transition: transform .2s ease, background .2s ease; }
+    .modal-close:hover { transform: rotate(90deg); background: var(--ivory); }
+    .modal-navigation { display: flex; gap: 9px; margin-top: 30px; }
+    .modal-navigation button { display: inline-flex; align-items: center; gap: 8px; padding: 10px 13px; border: 1px solid var(--line); border-radius: 999px; color: var(--green); background: var(--white); cursor: pointer; font-size: .72rem; font-weight: 700; transition: all .2s ease; }
+    .modal-navigation button:hover { border-color: var(--gold); background: var(--ivory); }
+    .modal-index { margin-top: 18px; color: var(--muted); font-size: .7rem; letter-spacing: .1em; }
+    .project-card--tall .project-image img { object-position: center 25%; }
+    .project-meta { padding: 20px 21px 22px; }
+    .project-meta small { color: var(--gold); font-size: .66rem; font-weight: 800; letter-spacing: .13em; }
+    .project-meta h3 { margin: 7px 0 0; font-size: 1rem; }
+    .project-meta p { margin: 8px 0 0; color: var(--muted); font-size: .76rem; line-height: 1.75; }
+    .contact-section { color: var(--white); background: var(--green); }
+    .contact-section .eyebrow { color: var(--gold); }
+    .contact-section .eyebrow::before { background: var(--gold); }
+    .contact-section .section-heading p { color: rgba(255,255,255,.68); }
+    .contact-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 62px; align-items: start; }
+    .contact-actions { display: grid; gap: 12px; margin-top: 32px; }
+    .contact-actions .btn--primary { color: var(--green); background: var(--white); }
+    .contact-actions .btn--primary:hover { background: var(--ivory); }
+    .contact-actions .btn--outline { color: var(--white); border-color: rgba(255,255,255,.28); background: transparent; }
+    .contact-actions .btn--outline:hover { border-color: var(--gold); background: rgba(255,255,255,.08); }
+    .contact-info { display: grid; gap: 12px; margin-top: 34px; }
+    .contact-info a { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,.78); font-size: .82rem; }
+    .contact-info i { width: 20px; color: var(--gold); text-align: center; }
+    .contact-panel { padding: 30px; border: 1px solid rgba(255,255,255,.8); border-radius: var(--radius-lg); color: var(--ink); background: var(--paper); }
+    .contact-panel h3 { margin: 0; font-size: 1.25rem; }
+    .contact-panel > p { margin: 8px 0 0; color: var(--muted); font-size: .82rem; }
+    .contact-options { display: grid; gap: 12px; margin-top: 24px; }
+    .contact-option { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 15px 16px; border: 1px solid var(--line); border-radius: 15px; background: var(--white); transition: border-color .2s ease, transform .2s ease; }
+    .contact-option:hover { transform: translateX(3px); border-color: var(--gold); }
+    .contact-option-main { display: flex; align-items: center; gap: 12px; }
+    .contact-option-icon { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 12px; color: var(--green); background: var(--ivory); }
+    .contact-option strong { display: block; font-size: .84rem; }
+    .contact-option span { display: block; margin-top: 2px; color: var(--muted); font-size: .7rem; }
+    .contact-option > i { color: var(--gold); font-size: .78rem; }
+    .site-footer { padding: 26px 0; color: var(--muted); background: #f4f1eb; font-size: .72rem; }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-socials { display: flex; gap: 8px; }
+    .footer-socials a { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--green); background: var(--white); transition: all .2s ease; }
+    .footer-socials a:hover { color: var(--white); border-color: var(--green); background: var(--green); transform: translateY(-2px); }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    .cursor-orb { position: fixed; z-index: 50; top: 0; left: 0; width: 24px; height: 24px; border: 1px solid rgba(201,169,106,.65); border-radius: 50%; opacity: 0; pointer-events: none; mix-blend-mode: multiply; transform: translate(-50%, -50%); transition: width .25s ease, height .25s ease, opacity .25s ease, background .25s ease; }
+    .cursor-orb.is-active { width: 54px; height: 54px; background: rgba(201,169,106,.10); opacity: 1; }
+    @keyframes aura-drift { from { transform: translate3d(-18px, 10px, 0) scale(.96); } to { transform: translate3d(22px, -15px, 0) scale(1.05); } }
+    @keyframes card-breathe { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-8px) rotate(1deg); } }
+    @keyframes tag-float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-7px) rotate(1deg); } }
+    @keyframes text-shimmer { to { background-position: 220% center; } }
+    @media (max-width: 900px) {
+      .nav-links, .nav-actions .btn { display: none; }
+      .menu-toggle { display: block; }
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 52px; }
+      .hero { min-height: auto; padding-top: 135px; }
+      .hero-art { max-width: 560px; width: 100%; margin: 0 auto; }
+      .about-grid { gap: 76px; }
+      .about-copy { max-width: 680px; }
+      .contact-grid { gap: 40px; }
+      .project-card, .project-card:nth-child(1), .project-card:nth-child(2), .project-card:nth-child(3), .project-card:nth-child(4), .project-card:nth-child(5) { grid-column: span 6; }
     }
-    @media (max-width: 639px) {
-      .page-shell { width: min(100% - 32px, 520px); }
-      .section-pad { padding-block: 70px; }
-      .hero-art { min-height: 330px; transform: scale(.94); transform-origin: center; margin-block: -6px; }
-      .orbit.a { width: 250px; height: 180px; }
-      .orbit.b { width: 320px; height: 230px; }
-      .orbit.c { width: 370px; height: 270px; }
-      .art-core { width: 148px; height: 148px; border-radius: 35px; }
-      .art-core-mark { font-size: 3.6rem; }
-      .float-chip { padding: 8px 9px; gap: 7px; font-size: .67rem; }
-      .float-chip i { width: 25px; height: 25px; border-radius: 8px; }
-      .float-chip.chip-one { left: -1%; top: 13%; }
-      .float-chip.chip-two { right: -2%; top: 23%; }
-      .float-chip.chip-three { left: -1%; bottom: 12%; }
-      .float-chip.chip-four { right: -2%; bottom: 9%; }
-      .portfolio-visual { height: 220px; }
-      .mock-window { inset: 22px 23px; }
-      .value-card, .capability-card { min-height: auto; }
+    @media (max-width: 760px) {
+      .nav { min-height: 68px; }
+      .hero-grid { gap: 38px; }
+      .hero-art { min-height: 330px; }
+      .portrait-frame { max-width: 380px; }
+      .project-grid { gap: 15px; }
+      .project-image { height: 245px; }
+    }
+    @media (max-width: 620px) {
+      .container { width: min(100% - 32px, 520px); }
+      .section { padding: 78px 0; }
+      .hero { padding: 120px 0 70px; }
+      .hero h1 { font-size: clamp(2.5rem, 13vw, 4rem); }
+      .hero-lead { font-size: .92rem; }
+      .hero-art { min-height: 350px; }
+      .hero-card--main { inset: 28px 22px 24px 22px; padding: 22px; }
+      .hero-card--main .number { font-size: 5.4rem; }
+      .hero-card--tag { right: -2px; }
+      .hero-card--tag-bottom { left: -2px; }
+      .about-points, .service-grid { grid-template-columns: 1fr; }
+      .about-point { display: grid; grid-template-columns: 28px 1fr; column-gap: 10px; padding: 13px 0; }
+      .about-point i { grid-row: span 2; }
+      .about-point strong, .about-point span { margin-top: 0; }
+      .work-head { display: block; }
+      .filter-list { justify-content: flex-start; margin-top: 24px; }
+      .project-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+      .project-card, .project-card:nth-child(1), .project-card:nth-child(2), .project-card:nth-child(3), .project-card:nth-child(4), .project-card:nth-child(5) { grid-column: auto; }
+      .project-image { height: 230px; }
+      .contact-panel { padding: 22px; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+      .modal-backdrop { padding: 14px; }
+      .project-modal { display: block; max-height: calc(100vh - 28px); overflow-y: auto; }
+      .modal-image { min-height: 250px; max-height: 42vh; }
+      .modal-content { padding: 28px 24px 24px; }
+      .modal-navigation { margin-top: 22px; }
     }
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition-duration: .01ms !important; }
       .reveal { opacity: 1; transform: none; }
+      .cursor-orb { display: none; }
     }
-    @media print {
-      body { background: #fff !important; color: #111827 !important; }
-      body > *:not(#resume-printable) { display: none !important; }
-      #resume-printable { display: block !important; padding: 22mm 19mm; font-family: "Noto Sans TC", sans-serif; color: #1f2937; }
-      #resume-printable h1 { color: #1d4ed8; font-size: 28pt; margin: 0 0 4mm; }
-      #resume-printable h2 { font-size: 13pt; color: #1e40af; border-bottom: 1px solid #cbd5e1; padding-bottom: 2mm; margin: 7mm 0 3mm; }
-      #resume-printable p, #resume-printable li { font-size: 10pt; line-height: 1.8; }
-      #resume-printable .resume-meta { color: #64748b; font-size: 9pt; }
-      #resume-printable .resume-highlight { background: #eff6ff; padding: 4mm; border-radius: 3mm; }
-    }
-
-    /* Brand color system: deep leaf green, warm ivory, muted gold */
-    :root {
-      --blue: #4a5d52;
-      --violet: #c9a96a;
-      --mint: #a7b7c6;
-      --ink: #333333;
-      --muted: #8c8c8c;
-      --line: rgba(51, 51, 51, .16);
-      --surface: rgba(255, 255, 255, .78);
-      --brand-ivory: #ede7dd;
-      --brand-gold: #c9a96a;
-      --brand-green: #4a5d52;
-    }
-    body { color: #333333; background: linear-gradient(135deg, #ffffff 0%, #ede7dd 52%, #f7f6f3 100%); }
-    body::before { background: radial-gradient(ellipse at 12% 18%, rgba(167,183,198,.18), transparent 32%), radial-gradient(ellipse at 83% 23%, rgba(201,169,106,.15), transparent 30%), radial-gradient(ellipse at 62% 82%, rgba(74,93,82,.12), transparent 31%); }
-    .grid-overlay { background-image: linear-gradient(rgba(51,51,51,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(51,51,51,.07) 1px, transparent 1px); }
-    .gradient-text { background: linear-gradient(105deg, #4a5d52 0%, #6d796d 54%, #c9a96a 100%); color: transparent; -webkit-background-clip: text; background-clip: text; }
-    .section-kicker { color: #4a5d52; }
-    .section-kicker::before { background: linear-gradient(90deg, #4a5d52, #c9a96a); }
-    .muted-copy { color: #6f716e; }
-    .glass-panel { border-color: rgba(255,255,255,.92); box-shadow: 0 16px 54px rgba(74,93,82,.08), inset 0 1px 0 rgba(255,255,255,.95); }
-    .interactive-card:hover { box-shadow: 0 25px 70px rgba(74,93,82,.14); border-color: rgba(201,169,106,.62); }
-    .interactive-card:hover::after { background: linear-gradient(130deg, rgba(74,93,82,.72), rgba(201,169,106,.58), rgba(167,183,198,.5)); }
-    .nav-glass { background: rgba(255,255,255,.82); border-bottom-color: rgba(74,93,82,.18); }
-    .nav-link:hover, .nav-link.active { color: #4a5d52; }
-    .nav-link::after { background: linear-gradient(90deg, #4a5d52, #c9a96a); }
-    .primary-button { background: linear-gradient(110deg, #4a5d52, #68796d); box-shadow: 0 10px 28px rgba(74,93,82,.2); }
-    .primary-button:hover { box-shadow: 0 15px 34px rgba(74,93,82,.28); }
-    .secondary-button:hover { border-color: rgba(74,93,82,.42); color: #4a5d52; }
-    .icon-tile { background: linear-gradient(140deg, #ede7dd, #f7f6f3); color: #4a5d52; }
-    .float-chip i { background: #ede7dd; color: #4a5d52; }
-    .portfolio-filter:hover { color: #4a5d52; background: rgba(237,231,221,.82); }
-    .portfolio-filter.active { border-color: rgba(201,169,106,.75); color: #4a5d52; }
-    .text-blue-600, .text-blue-700, .text-blue-800 { color: #4a5d52 !important; }
-    .text-violet-600 { color: #8b7654 !important; }
-    .text-emerald-600, .text-emerald-700 { color: #4a5d52 !important; }
-    .bg-blue-50, .bg-blue-50\/80, .bg-blue-100\/40 { background-color: #ede7dd !important; }
-    .bg-violet-50, .bg-violet-100\/35 { background-color: #f3eee6 !important; }
-    .bg-emerald-50, .bg-emerald-100\/30 { background-color: #e8eee9 !important; }
-    .border-blue-100, .border-blue-100\/80 { border-color: rgba(74,93,82,.25) !important; }
-    .border-emerald-200:hover { border-color: rgba(74,93,82,.48) !important; }
-
-    /* Complete utility-color mapping for Tailwind classes used throughout the page */
-    [class*="text-blue-"] { color: #4a5d52 !important; }
-    [class*="text-emerald-"] { color: #4a5d52 !important; }
-    [class*="text-violet-"] { color: #9a8050 !important; }
-    [class~="bg-blue-50"], [class~="bg-blue-50/80"], [class~="bg-blue-100/35"], [class~="bg-blue-100/40"], [class~="bg-blue-100/65"] { background-color: #ede7dd !important; }
-    [class~="bg-violet-50"], [class~="bg-violet-100/35"] { background-color: #f3eee6 !important; }
-    [class~="bg-emerald-50"], [class~="bg-emerald-100/30"] { background-color: #e8eee9 !important; }
-    [class~="bg-blue-300"], [class~="bg-blue-400"] { background-color: #a7b7c6 !important; }
-    [class~="bg-emerald-300"], [class~="bg-emerald-400"], [class~="bg-emerald-500"] { background-color: #4a5d52 !important; }
-    [class~="bg-blue-600"] { background-color: #4a5d52 !important; }
-    [class~="bg-violet-600"] { background-color: #9a8050 !important; }
-    [class~="from-blue-50"], [class~="via-blue-50/65"], [class~="via-blue-50/25"] { --tw-gradient-from: #ede7dd !important; --tw-gradient-to: rgb(237 231 221 / 0) !important; }
-    [class~="from-blue-600"] { --tw-gradient-from: #4a5d52 !important; --tw-gradient-to: rgb(74 93 82 / 0) !important; }
-    [class~="from-violet-50"], [class~="to-violet-50"], [class~="to-violet-50/45"], [class~="to-violet-50/30"] { --tw-gradient-to: #f3eee6 !important; }
-    [class~="from-violet-600"] { --tw-gradient-from: #9a8050 !important; --tw-gradient-to: rgb(154 128 80 / 0) !important; }
-    [class~="from-emerald-50"], [class~="to-emerald-50"] { --tw-gradient-from: #e8eee9 !important; --tw-gradient-to: rgb(232 238 233 / 0) !important; }
-    [class~="via-indigo-600"] { --tw-gradient-stops: var(--tw-gradient-from), #6b756d, var(--tw-gradient-to) !important; }
-    [class~="to-blue-50"] { --tw-gradient-to: #ede7dd !important; }
-    [class~="to-transparent"] { --tw-gradient-to: transparent !important; }
-    [class~="border-blue-100"], [class~="border-blue-100/80"], [class~="border-blue-100/90"] { border-color: rgba(74,93,82,.25) !important; }
-    [class~="border-violet-100"], [class~="border-violet-100/35"] { border-color: rgba(201,169,106,.25) !important; }
-    [class~="shadow-[0_14px_40px_rgba(37,99,235,.06)]"] { box-shadow: 0 14px 40px rgba(74,93,82,.07) !important; }
-    .art-core-mark { background: linear-gradient(145deg, #4a5d52, #7b897d 66%, #c9a96a); -webkit-background-clip: text; background-clip: text; }
-    .visual-brand .brand-circle { background: conic-gradient(from 30deg, #4a5d52, #a7b7c6, #c9a96a, #4a5d52); box-shadow: 0 13px 30px rgba(74,93,82,.18); }
-    .social-link:hover { color: #4a5d52; border-color: rgba(201,169,106,.7); box-shadow: 0 8px 22px rgba(74,93,82,.1); }
-    .status-button:hover, .status-button:focus-visible { background: linear-gradient(rgba(232,238,233,.96), rgba(232,238,233,.96)) padding-box, linear-gradient(115deg, #4a5d52, #c9a96a) border-box; color: #4a5d52; box-shadow: 0 12px 35px rgba(74,93,82,.16); }
-    .status-button:hover .status-dot, .status-button:focus-visible .status-dot { background: #4a5d52; box-shadow: 0 0 0 5px rgba(74,93,82,.13), 0 0 14px rgba(74,93,82,.32); }
   </style>
 </head>
 <body>
-  <canvas id="particle-canvas" aria-hidden="true"></canvas>
-  <div class="grid-overlay" aria-hidden="true"></div>
-
-  <!-- Navigation -->
-  <header class="nav-glass fixed inset-x-0 top-0 z-50">
-    <nav class="page-shell flex h-[76px] items-center justify-between" aria-label="主要導覽">
-      <a href="#home" class="flex items-center gap-3" aria-label="張穎華首頁">
-        <span class="grid h-10 w-10 place-items-center rounded-[14px] border border-white bg-gradient-to-br from-blue-50 via-white to-violet-50 shadow-sm">
-          <span class="text-[17px] font-extrabold tracking-[-.12em] gradient-text">067</span>
-        </span>
-        <span class="leading-tight">
-          <span class="block text-[13px] font-bold tracking-wide text-slate-800">張穎華 <span class="font-medium text-slate-500">Ying-Hua Chang</span></span>
-          <span class="mt-1 block text-[9px] font-bold tracking-[.28em] text-slate-400">067淬 · VISUAL THINKING</span>
-        </span>
+  <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+  <div id="cursor-orb" class="cursor-orb" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="回到首頁">
+        <span class="brand-mark">067</span>
+        <span class="brand-copy">張穎華<small>VISUAL DESIGN & BRAND</small></span>
       </a>
-
-      <div class="hidden items-center gap-7 lg:flex" id="desktop-nav">
-        <a class="nav-link text-[13px] font-semibold" href="#home">首頁 <span class="ml-1 text-[10px] font-medium text-slate-400">Home</span></a>
-        <a class="nav-link text-[13px] font-semibold" href="#about">關於我 <span class="ml-1 text-[10px] font-medium text-slate-400">About</span></a>
-        <a class="nav-link text-[13px] font-semibold" href="#capabilities">核心能力 <span class="ml-1 text-[10px] font-medium text-slate-400">Capabilities</span></a>
-        <a class="nav-link text-[13px] font-semibold" href="#portfolio">作品集 <span class="ml-1 text-[10px] font-medium text-slate-400">Portfolio</span></a>
-        <a class="nav-link text-[13px] font-semibold" href="#contact">聯絡我 <span class="ml-1 text-[10px] font-medium text-slate-400">Contact</span></a>
-      </div>
-
-      <div class="hidden lg:block">
-        <a class="primary-button !px-4 !py-[10px] !text-xs" href="#contact">線上預約諮詢 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
-      </div>
-      <button id="mobile-menu-toggle" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200/80 bg-white/80 text-slate-600 lg:hidden" aria-label="開啟行動版導覽選單" aria-expanded="false" aria-controls="mobile-menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-    </nav>
-    <div id="mobile-menu" class="hidden border-t border-slate-200/70 bg-white/95 px-5 pb-5 pt-3 shadow-lg lg:hidden">
-      <div class="mx-auto flex max-w-xl flex-col">
-        <a class="mobile-nav-link rounded-xl px-3 py-3 text-sm font-semibold text-slate-600 hover:bg-blue-50 hover:text-blue-700" href="#home">首頁 Home</a>
-        <a class="mobile-nav-link rounded-xl px-3 py-3 text-sm font-semibold text-slate-600 hover:bg-blue-50 hover:text-blue-700" href="#about">關於我 About</a>
-        <a class="mobile-nav-link rounded-xl px-3 py-3 text-sm font-semibold text-slate-600 hover:bg-blue-50 hover:text-blue-700" href="#capabilities">核心能力 Capabilities</a>
-        <a class="mobile-nav-link rounded-xl px-3 py-3 text-sm font-semibold text-slate-600 hover:bg-blue-50 hover:text-blue-700" href="#portfolio">作品集 Portfolio</a>
-        <a class="mobile-nav-link rounded-xl px-3 py-3 text-sm font-semibold text-slate-600 hover:bg-blue-50 hover:text-blue-700" href="#contact">聯絡我 Contact</a>
-        <a class="primary-button mt-3" href="#contact">線上預約諮詢 <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
+      <nav class="nav-links" aria-label="主要導覽">
+        <a href="#about">關於我</a><a href="#services">服務</a><a href="#work">作品集</a><a href="#contact">聯絡我</a>
+      </nav>
+      <div class="nav-actions"><a class="btn btn--primary" href="#contact">開始合作 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><button id="menu-toggle" class="menu-toggle" type="button" aria-label="開啟選單" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button></div>
     </div>
+    <nav id="mobile-menu" class="mobile-menu container" aria-label="行動版導覽"><a href="#about">關於我</a><a href="#services">服務</a><a href="#work">作品集</a><a href="#contact">聯絡我</a></nav>
   </header>
 
   <main>
-    <!-- 1. Hero -->
-    <section id="home" class="relative flex min-h-[780px] items-center overflow-hidden pb-16 pt-32 sm:min-h-[820px] sm:pt-36 lg:min-h-[880px]">
-      <div class="hero-orb one" aria-hidden="true"></div><div class="hero-orb two" aria-hidden="true"></div>
-      <div class="page-shell relative z-10 grid items-center gap-5 lg:grid-cols-[1.07fr_.93fr] lg:gap-0">
-        <div class="hero-copy reveal">
-          <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-blue-100/90 bg-white/70 px-3.5 py-2 text-[11px] font-bold tracking-[.13em] text-blue-700 shadow-sm">
-            <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-45"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span></span>
-            VISUAL DESIGN · BRAND STRATEGY · AI ENABLEMENT
-          </div>
-          <p class="mb-4 text-sm font-medium tracking-[.11em] text-slate-500">讓設計不只好看，更精準地創造價值。</p>
-          <h1 class="max-w-[790px] text-[2.45rem] font-bold leading-[1.35] tracking-[-.065em] text-slate-900 sm:text-5xl sm:leading-[1.3] xl:text-[3.65rem]">
-            <span id="typewriter" class="typewriter-text" data-text="跨域創新 × 敏捷賦能，重塑當代視覺體驗。" aria-label="跨域創新 × 敏捷賦能，重塑當代視覺體驗。"></span><span id="type-caret" class="type-caret" aria-hidden="true"></span>
-          </h1>
-          <p class="muted-copy mt-7 max-w-[630px] text-[15px] sm:text-base">以「全貌思維」轉化商業需求，打造具視覺衝擊力與商業價值的當代品牌體驗。讓策略、設計與執行在同一個方向上發揮力量。</p>
-          <div class="mt-8 flex flex-wrap gap-2.5">
-            <span class="tag-pill"><i class="fa-solid fa-pen-nib text-blue-500"></i> 2D 平面視覺</span>
-            <span class="tag-pill"><i class="fa-solid fa-cube text-violet-500"></i> 3D 產品渲染</span>
-            <span class="tag-pill"><i class="fa-solid fa-wand-magic-sparkles text-emerald-500"></i> AI 敏捷賦能</span>
-            <span class="tag-pill"><i class="fa-solid fa-compass-drafting text-sky-500"></i> 品牌企劃</span>
-          </div>
-          <div class="mt-9 flex flex-wrap items-center gap-4">
-            <a href="#portfolio" class="primary-button">探索精選作品 <i class="fa-solid fa-arrow-down-long text-xs"></i></a>
-            <button id="status-button" class="status-button" type="button" aria-label="查看合作狀態">
-              <span class="status-dot"></span><span id="status-label" class="status-label">開啟合作對話</span><span class="status-tooltip" role="status">Status: Ready to Connect</span>
-            </button>
-          </div>
-          <div class="mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-slate-400">
-            <span class="inline-flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> 從策略到視覺的整合思考</span>
-            <span class="hidden h-4 w-px bg-slate-200 sm:block"></span>
-            <span class="inline-flex items-center gap-2"><i class="fa-solid fa-sparkles text-violet-400"></i> 設計 × 科技 × 商業</span>
-          </div>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <span class="eyebrow">Visual Designer · Brand Thinker</span>
+          <h1>把想法整理成<br /><span class="highlight">值得被記住的視覺。</span></h1>
+          <p class="hero-lead">我是張穎華，專注於視覺設計、品牌整合與生活美學。從釐清需求開始，將策略、畫面與細節整合成清晰、有溫度的品牌體驗。</p>
+          <div class="hero-actions"><a class="btn btn--primary" href="#work">查看作品集 <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a><a class="btn btn--outline" href="#about">認識我</a></div>
+          <div class="hero-note"><span><i class="fa-solid fa-check" aria-hidden="true"></i> 視覺設計</span><span><i class="fa-solid fa-check" aria-hidden="true"></i> 品牌整合</span><span><i class="fa-solid fa-check" aria-hidden="true"></i> 空間與產品美學</span></div>
         </div>
-
-        <div class="hero-art reveal delay-2" aria-label="融合設計、品牌與科技的動態視覺示意圖" role="img">
-          <div class="orbit a"></div><div class="orbit b"></div><div class="orbit c"></div>
-          <div class="art-core"><span class="art-core-mark">067</span></div>
-          <div class="float-chip chip-one"><i class="fa-solid fa-pen-ruler"></i><span>Visual Design<br><small class="font-normal text-slate-400">視覺整合</small></span></div>
-          <div class="float-chip chip-two"><i class="fa-solid fa-cube !bg-violet-50 !text-violet-500"></i><span>3D Thinking<br><small class="font-normal text-slate-400">立體呈現</small></span></div>
-          <div class="float-chip chip-three"><i class="fa-solid fa-wand-magic-sparkles !bg-emerald-50 !text-emerald-600"></i><span>AI Enablement<br><small class="font-normal text-slate-400">敏捷賦能</small></span></div>
-          <div class="float-chip chip-four"><i class="fa-solid fa-layer-group !bg-sky-50 !text-sky-600"></i><span>Brand Strategy<br><small class="font-normal text-slate-400">品牌策略</small></span></div>
-          <span class="absolute left-1/2 top-[2%] h-2 w-2 rounded-full bg-blue-300 shadow-[0_0_0_7px_rgba(191,219,254,.25)]"></span>
-          <span class="absolute bottom-[7%] left-[49%] h-2.5 w-2.5 rounded-full bg-emerald-300 shadow-[0_0_0_7px_rgba(167,243,208,.22)]"></span>
+        <div class="hero-art reveal" aria-label="設計與品牌概念視覺">
+          <div class="hero-card hero-card--main"><span class="number">067</span><h2>Design with purpose.</h2><p>策略 × 視覺 × 生活感</p></div>
+          <div class="hero-card hero-card--tag"><i class="fa-solid fa-sparkles" aria-hidden="true"></i> thoughtful details</div>
+          <div class="hero-card hero-card--tag-bottom"><strong>從概念到完成</strong>讓每個細節都有方向</div>
         </div>
       </div>
-      <div class="absolute bottom-0 left-0 right-0"><div class="page-shell"><div class="hero-divider"></div><div class="flex items-center justify-between py-5 text-[10px] font-semibold tracking-[.18em] text-slate-400"><span>STRATEGY → DESIGN → IMPACT</span><a href="#about" class="group inline-flex items-center gap-2 tracking-normal transition hover:text-blue-600">向下探索 <i class="fa-solid fa-arrow-down-long transition group-hover:translate-y-1"></i></a></div></div></div>
     </section>
 
-    <!-- 2. About -->
-    <section id="about" class="section-pad relative">
-      <div class="page-shell">
-        <div class="grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
-          <div class="reveal">
-            <span class="section-kicker">About Ying-Hua</span>
-            <h2 class="section-title mt-5">將想法轉譯為<br /><span class="gradient-text">被看見的價值。</span></h2>
-            <div class="mt-8 rounded-[26px] border border-white/90 bg-white/65 p-6 shadow-soft backdrop-blur-xl sm:p-7">
-              <div class="mb-4 flex items-center gap-3"><span class="grid h-10 w-10 place-items-center rounded-xl bg-blue-50 text-blue-600"><i class="fa-solid fa-quote-left"></i></span><span class="text-xs font-bold tracking-[.14em] text-slate-400">DESIGN PHILOSOPHY</span></div>
-              <p class="text-lg font-semibold leading-[1.9] tracking-[-.02em] text-slate-700">「設計不只是美感的堆疊，而是讓訊息精準傳遞、讓品牌被看見與記得的溝通橋樑。」</p>
-              <div class="mt-6 h-px bg-gradient-to-r from-blue-200 via-violet-100 to-transparent"></div>
-              <p class="mt-4 text-xs leading-6 text-slate-500">以清楚的策略為起點，讓每個色彩、字體、構圖與互動細節，都能為品牌溝通服務。</p>
-            </div>
-          </div>
-          <div class="reveal delay-1">
-            <p class="muted-copy text-[15px]">我是張穎華，專注於平面設計與品牌視覺整合。職涯橫跨視覺設計、企劃與品牌推廣，習慣從「全貌思維」出發，將抽象的商業需求與品牌理念，轉化為具視覺衝擊力且能精準溝通的設計方案。</p>
-            <p class="muted-copy mt-4 text-[15px]">我相信設計的價值不止於單一畫面，而是由一致的訊息、合適的媒介與細緻的執行共同累積。透過跨域協作與工具整合，讓想法更快被看見、被理解，也更容易落實。</p>
-            <div class="mt-9 grid gap-4 sm:grid-cols-3">
-              <article class="glass-panel interactive-card value-card rounded-[22px] p-5">
-                <span class="value-number">01 / EXECUTION</span>
-                <div class="icon-tile mt-4"><i class="fa-solid fa-list-check"></i></div>
-                <h3 class="mt-5 text-[15px] font-bold leading-7">全流程實戰與<br />精準執行力</h3>
-                <p class="mt-3 text-xs leading-6 text-slate-500">熟悉概念發想、風格定位、視覺編排、色彩規劃至完稿輸出的完整流程，重視細節與節奏。</p>
-              </article>
-              <article class="glass-panel interactive-card value-card rounded-[22px] p-5">
-                <span class="value-number">02 / COLLABORATION</span>
-                <div class="icon-tile mt-4 !bg-gradient-to-br !from-violet-50 !to-blue-50 !text-violet-600"><i class="fa-solid fa-people-arrows-left-right"></i></div>
-                <h3 class="mt-5 text-[15px] font-bold leading-7">跨界思維與<br />高效協作溝通</h3>
-                <p class="mt-3 text-xs leading-6 text-slate-500">以「視覺翻譯官」的角色連結行銷、營運與專案團隊，將不同專業的想法轉為共通語言。</p>
-              </article>
-              <article class="glass-panel interactive-card value-card rounded-[22px] p-5">
-                <span class="value-number">03 / INNOVATION</span>
-                <div class="icon-tile !bg-gradient-to-br !from-emerald-50 !to-blue-50 !text-emerald-600 mt-4"><i class="fa-solid fa-lightbulb"></i></div>
-                <h3 class="mt-5 text-[15px] font-bold leading-7">創新視覺與<br />品牌個性重塑</h3>
-                <p class="mt-3 text-xs leading-6 text-slate-500">挖掘品牌獨特 DNA，結合當代視覺趨勢，發展能被辨識、被記憶的專屬體驗。</p>
-              </article>
-            </div>
-            <div class="mt-8 flex flex-col gap-4 rounded-[22px] border border-blue-100/80 bg-gradient-to-r from-white/80 via-blue-50/65 to-violet-50/45 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
-              <div><p class="text-sm font-bold text-slate-800">持續進化，讓設計與商業目標同步</p><p class="mt-1 text-xs leading-6 text-slate-500">期待與重視策略、創新及細節的團隊共同創造下一個可能。</p></div>
-              <button id="resume-download" type="button" class="secondary-button shrink-0"><i class="fa-solid fa-file-arrow-down text-blue-600"></i> 下載履歷 PDF <span class="text-[10px] text-slate-400">Print / PDF</span></button>
-            </div>
-            <p class="mt-3 text-[11px] text-slate-400">點擊後將開啟列印視窗，可選擇「另存為 PDF」保存履歷。</p>
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <div class="portrait-frame reveal">
+          <img src="張穎華.jpg" alt="張穎華個人照片" />
+          <div class="portrait-caption"><span><strong>張穎華 Ying-Hua Chang</strong><small>VISUAL DESIGNER · BRAND THINKER</small></span><i class="fa-solid fa-leaf" aria-hidden="true"></i></div>
+        </div>
+        <div class="about-copy reveal">
+          <span class="eyebrow">About me</span>
+          <h2>設計不只是好看，<br /><span class="highlight">而是讓溝通更有效。</span></h2>
+          <p>我習慣從全貌思維出發，先理解品牌想說什麼、要和誰對話，再把抽象的需求轉化成具體的視覺語言。過去累積平面設計、品牌推廣、產品與空間相關經驗，重視細節，也重視實際落地。</p>
+          <div class="about-points">
+            <div class="about-point"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i><strong>先釐清，再設計</strong><span>從目標與情境建立方向。</span></div>
+            <div class="about-point"><i class="fa-solid fa-layer-group" aria-hidden="true"></i><strong>整合每個接觸點</strong><span>讓品牌呈現保持一致。</span></div>
+            <div class="about-point"><i class="fa-solid fa-seedling" aria-hidden="true"></i><strong>美感也要能落地</strong><span>兼顧美感、功能與執行。</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. Capabilities -->
-    <section id="capabilities" class="section-pad relative overflow-hidden bg-white/38">
-      <div class="absolute -left-32 top-20 h-80 w-80 rounded-full bg-blue-100/40 blur-3xl" aria-hidden="true"></div>
-      <div class="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-violet-100/35 blur-3xl" aria-hidden="true"></div>
-      <div class="page-shell relative">
-        <div class="mx-auto max-w-2xl text-center reveal">
-          <span class="section-kicker">Capabilities & Services</span>
-          <h2 class="section-title mt-5">整合多元能力，<span class="gradient-text">讓執行更有方向。</span></h2>
-          <p class="muted-copy mt-5">從畫面美感到跨部門協作，以工具、流程與整體觀點串起完整的品牌體驗。</p>
-        </div>
-        <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          <article class="glass-panel interactive-card capability-card rounded-[25px] p-6 reveal">
-            <div class="flex items-center justify-between"><div class="icon-tile"><i class="fa-solid fa-bezier-curve"></i></div><span class="value-number">01</span></div>
-            <h3 class="mt-6 text-[17px] font-bold leading-7">全方位視覺與<br />跨維度實踐</h3>
-            <p class="mt-3 text-[13px] leading-7 text-slate-500">以平面視覺建立溝通焦點，延伸至產品立體建模與渲染展示，讓概念有更完整的呈現方式。</p>
-            <div class="mt-5 flex flex-wrap gap-2"><span class="tool-chip">Photoshop</span><span class="tool-chip">Illustrator</span><span class="tool-chip">InDesign</span><span class="tool-chip">AutoCAD</span><span class="tool-chip">SolidWorks</span><span class="tool-chip">KeyShot</span></div>
-          </article>
-          <article class="glass-panel interactive-card capability-card rounded-[25px] p-6 reveal delay-1">
-            <div class="flex items-center justify-between"><div class="icon-tile !bg-gradient-to-br !from-violet-50 !to-blue-50 !text-violet-600"><i class="fa-solid fa-wand-magic-sparkles"></i></div><span class="value-number">02</span></div>
-            <h3 class="mt-6 text-[17px] font-bold leading-7">前瞻技術與<br />敏捷賦能</h3>
-            <p class="mt-3 text-[13px] leading-7 text-slate-500">運用 AI 繪圖與設計輔助工具加速發想與方向驗證，搭配彈性設計工具，提升交付效率。</p>
-            <div class="mt-5 flex flex-wrap gap-2"><span class="tool-chip">AI Design</span><span class="tool-chip">Canva</span><span class="tool-chip">Prompt Craft</span><span class="tool-chip">Rapid Iteration</span></div>
-          </article>
-          <article class="glass-panel interactive-card capability-card rounded-[25px] p-6 reveal delay-2">
-            <div class="flex items-center justify-between"><div class="icon-tile !bg-gradient-to-br !from-emerald-50 !to-blue-50 !text-emerald-600"><i class="fa-solid fa-photo-film"></i></div><span class="value-number">03</span></div>
-            <h3 class="mt-6 text-[17px] font-bold leading-7">企劃行銷與<br />動態影像整合</h3>
-            <p class="mt-3 text-[13px] leading-7 text-slate-500">結合企劃執行、社群行銷思維與影音剪輯，將品牌主張轉化成更有節奏、更容易共鳴的內容。</p>
-            <div class="mt-5 flex flex-wrap gap-2"><span class="tool-chip">內容企劃</span><span class="tool-chip">社群行銷</span><span class="tool-chip">威力導演</span><span class="tool-chip">會聲會影</span></div>
-          </article>
-          <article class="glass-panel interactive-card capability-card rounded-[25px] p-6 reveal delay-3">
-            <div class="flex items-center justify-between"><div class="icon-tile !bg-gradient-to-br !from-sky-50 !to-indigo-50 !text-sky-600"><i class="fa-solid fa-chart-column"></i></div><span class="value-number">04</span></div>
-            <h3 class="mt-6 text-[17px] font-bold leading-7">數據與專案管理<br />商業賦能</h3>
-            <p class="mt-3 text-[13px] leading-7 text-slate-500">梳理提案邏輯、執行節點與資訊層級，讓設計交付能對應專案時程，並清楚支持決策。</p>
-            <div class="mt-5 flex flex-wrap gap-2"><span class="tool-chip">Word</span><span class="tool-chip">Excel</span><span class="tool-chip">PowerPoint</span><span class="tool-chip">專案協作</span></div>
-          </article>
-        </div>
-        <div class="mt-8 flex flex-col items-start justify-between gap-4 rounded-[22px] border border-white bg-white/65 p-5 shadow-sm backdrop-blur-md sm:flex-row sm:items-center sm:p-6 reveal">
-          <div class="flex items-start gap-3"><span class="mt-1 text-emerald-500"><i class="fa-solid fa-circle-nodes"></i></span><div><p class="text-sm font-bold text-slate-800">不是工具的堆疊，而是恰到好處的整合</p><p class="mt-1 text-xs leading-6 text-slate-500">依據專案目標選擇適合的方法，將資源投入最能產生價值的環節。</p></div></div>
-          <a href="#contact" class="secondary-button shrink-0">討論合作需求 <i class="fa-solid fa-arrow-right text-xs"></i></a>
+    <section id="services" class="section section--soft">
+      <div class="container">
+        <div class="section-heading reveal"><span class="eyebrow">What I do</span><h2>用設計，整理品牌的<br /><span class="highlight">每一個重要時刻。</span></h2><p>從單一視覺到完整內容規劃，依照你的需求組合合適的設計支援。</p></div>
+        <div class="service-grid">
+          <article class="service-card reveal"><span class="service-icon"><i class="fa-solid fa-palette" aria-hidden="true"></i></span><small>01 / VISUAL DESIGN</small><h3>視覺設計</h3><p>平面設計、廣告文宣、活動海報與品牌形象，讓訊息清楚傳遞，也讓品牌更容易被辨識。</p></article>
+          <article class="service-card reveal"><span class="service-icon"><i class="fa-solid fa-couch" aria-hidden="true"></i></span><small>02 / INTERIOR STYLING</small><h3>軟裝布置</h3><p>結合色彩、家具、燈光與空間美學，為不同場域注入風格、舒適度與生活溫度。</p></article>
+          <article class="service-card reveal"><span class="service-icon"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i></span><small>03 / SOCIAL MARKETING</small><h3>社群行銷</h3><p>整合社群經營、內容企劃與視覺素材，將品牌曝光與互動轉化為實際的溝通價值。</p></article>
         </div>
       </div>
     </section>
 
-    <!-- 4. Portfolio -->
-    <section id="portfolio" class="section-pad">
-      <div class="page-shell">
-        <div class="flex flex-col justify-between gap-7 md:flex-row md:items-end reveal">
-          <div><span class="section-kicker">Selected Portfolio</span><h2 class="section-title mt-5">讓概念成形，<span class="gradient-text">讓品牌留下印象。</span></h2><p class="muted-copy mt-4 max-w-2xl">以不同媒介探索視覺敘事，從一張主視覺到完整品牌系統，保持策略、細節與表現一致。</p></div>
-          <span class="mb-1 inline-flex items-center gap-2 text-xs text-slate-400"><i class="fa-solid fa-layer-group text-blue-400"></i> Selected directions · 作品方向示意</span>
-        </div>
-        <div class="mt-9 flex flex-wrap gap-2 rounded-2xl border border-white/80 bg-white/45 p-2 shadow-sm backdrop-blur-md reveal" role="group" aria-label="作品分類篩選">
-          <button class="portfolio-filter active" data-filter="all" aria-pressed="true">全部 <span class="ml-1 text-[10px] opacity-60">All</span></button>
-          <button class="portfolio-filter" data-filter="visual" aria-pressed="false">視覺設計 <span class="ml-1 text-[10px] opacity-60">Visual</span></button>
-          <button class="portfolio-filter" data-filter="product" aria-pressed="false">產品與 3D <span class="ml-1 text-[10px] opacity-60">Product</span></button>
-          <button class="portfolio-filter" data-filter="branding" aria-pressed="false">品牌企劃 <span class="ml-1 text-[10px] opacity-60">Branding</span></button>
-        </div>
-
-        <div id="portfolio-grid" class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          <article class="portfolio-card glass-panel interactive-card reveal" data-category="visual">
-            <div class="portfolio-visual"><div class="mock-window"><div class="mock-browserbar"><span></span><span></span><span></span></div><div class="mock-art visual-summer"><div class="sun"></div><div class="swoosh"></div><div class="mock-title">TASTE<br />OF<br />SUMMER.</div><div class="tiny-copy">A COLORFUL MOMENT / 2026</div></div></div></div>
-            <div class="p-5"><div class="eyebrow-line"><span>VISUAL DESIGN / 01</span></div><h3 class="mt-3 text-base font-bold">季節主視覺與社群延伸</h3><p class="mt-2 text-xs leading-6 text-slate-500">以大色塊與輕盈構圖建立視覺焦點，延伸至社群素材，形成連貫的溝通節奏。</p><div class="mt-4 flex flex-wrap gap-2"><span class="impact-tag blue"><i class="fa-solid fa-eye"></i> 視覺辨識</span><span class="impact-tag"><i class="fa-solid fa-share-nodes"></i> 跨媒介延伸</span></div></div>
-          </article>
-          <article class="portfolio-card glass-panel interactive-card reveal delay-1" data-category="product">
-            <div class="portfolio-visual"><div class="mock-window"><div class="mock-browserbar"><span></span><span></span><span></span></div><div class="mock-art visual-product"><div class="product-shadow"></div><div class="bottle"></div></div></div></div>
-            <div class="p-5"><div class="eyebrow-line"><span>PRODUCT / 3D / 02</span></div><h3 class="mt-3 text-base font-bold">產品材質與立體視覺提案</h3><p class="mt-2 text-xs leading-6 text-slate-500">以比例、材質與光影表現產品個性，協助概念在進入製作前更直觀地被理解。</p><div class="mt-4 flex flex-wrap gap-2"><span class="impact-tag blue"><i class="fa-solid fa-cube"></i> 立體溝通</span><span class="impact-tag"><i class="fa-solid fa-lightbulb"></i> 概念驗證</span></div></div>
-          </article>
-          <article class="portfolio-card glass-panel interactive-card reveal delay-2" data-category="branding">
-            <div class="portfolio-visual"><div class="mock-window"><div class="mock-browserbar"><span></span><span></span><span></span></div><div class="mock-art visual-brand"><div class="brand-card"></div><div class="brand-circle"></div></div></div></div>
-            <div class="p-5"><div class="eyebrow-line"><span>BRAND SYSTEM / 03</span></div><h3 class="mt-3 text-base font-bold">品牌識別與視覺規範</h3><p class="mt-2 text-xs leading-6 text-slate-500">從標誌語言、色彩與字體出發，整理可持續延伸的視覺規則與應用方向。</p><div class="mt-4 flex flex-wrap gap-2"><span class="impact-tag blue"><i class="fa-solid fa-fingerprint"></i> 品牌一致性</span><span class="impact-tag"><i class="fa-solid fa-book-open"></i> 系統化規範</span></div></div>
-          </article>
-          <article class="portfolio-card glass-panel interactive-card reveal" data-category="visual">
-            <div class="portfolio-visual"><div class="mock-window"><div class="mock-browserbar"><span></span><span></span><span></span></div><div class="mock-art visual-editorial"><div class="paper"><div class="big">DESIGN<br />WITH<br />PURPOSE.</div><div class="block"></div><div class="line"></div><div class="line" style="width:78%"></div><div class="line" style="width:88%"></div></div></div></div></div>
-            <div class="p-5"><div class="eyebrow-line"><span>EDITORIAL / 04</span></div><h3 class="mt-3 text-base font-bold">編輯式資訊與活動文宣</h3><p class="mt-2 text-xs leading-6 text-slate-500">以清晰層級、留白與資訊分組提高閱讀效率，讓重要訊息在有限版面中被快速掌握。</p><div class="mt-4 flex flex-wrap gap-2"><span class="impact-tag blue"><i class="fa-solid fa-align-left"></i> 資訊易讀</span><span class="impact-tag"><i class="fa-solid fa-bullseye"></i> 訊息聚焦</span></div></div>
-          </article>
-          <article class="portfolio-card glass-panel interactive-card reveal delay-1" data-category="branding">
-            <div class="portfolio-visual"><div class="mock-window"><div class="mock-browserbar"><span></span><span></span><span></span></div><div class="mock-art visual-campaign"><div class="circle-one"></div><div class="circle-two"></div><div class="mock-title">MAKE<br />A MOMENT.</div></div></div></div>
-            <div class="p-5"><div class="eyebrow-line"><span>CAMPAIGN / 05</span></div><h3 class="mt-3 text-base font-bold">品牌活動與行銷溝通</h3><p class="mt-2 text-xs leading-6 text-slate-500">從活動主張與受眾情境切入，建構可套用於宣傳素材、活動頁與社群內容的視覺方向。</p><div class="mt-4 flex flex-wrap gap-2"><span class="impact-tag blue"><i class="fa-solid fa-bullhorn"></i> 溝通一致</span><span class="impact-tag"><i class="fa-solid fa-route"></i> 轉換路徑</span></div></div>
-          </article>
-          <article class="portfolio-card glass-panel interactive-card reveal delay-2" data-category="product">
-            <div class="portfolio-visual"><div class="mock-window"><div class="mock-browserbar"><span></span><span></span><span></span></div><div class="mock-art visual-identity"><div class="identity-block"><b>YH</b></div><div class="identity-side"></div></div></div></div>
-            <div class="p-5"><div class="eyebrow-line"><span>FORM & MATERIAL / 06</span></div><h3 class="mt-3 text-base font-bold">材質色彩與產品情境呈現</h3><p class="mt-2 text-xs leading-6 text-slate-500">讓色彩、材質與使用情境彼此呼應，建立產品提案的質感基調與視覺一致性。</p><div class="mt-4 flex flex-wrap gap-2"><span class="impact-tag blue"><i class="fa-solid fa-palette"></i> 材質表現</span><span class="impact-tag"><i class="fa-solid fa-box-open"></i> 情境呈現</span></div></div>
-          </article>
-        </div>
-        <p class="mt-5 text-center text-[11px] leading-6 text-slate-400"><i class="fa-solid fa-circle-info mr-1"></i> 以上為網頁內建的視覺方向示意與 Mockup 版型，正式發佈前請替換成實際作品、專案背景及可公開的成果數據；此處不代表已驗證的 ROI 數字。</p>
-      </div>
-    </section>
-
-    <!-- Core Products & Technical Solutions -->
-    <section id="solutions" class="section-pad relative overflow-hidden">
-      <div class="absolute -left-32 top-24 h-80 w-80 rounded-full bg-blue-100/35 blur-3xl" aria-hidden="true"></div>
-      <div class="absolute -right-32 bottom-10 h-80 w-80 rounded-full bg-emerald-100/30 blur-3xl" aria-hidden="true"></div>
-      <div class="page-shell relative">
-        <div class="mx-auto max-w-2xl text-center reveal">
-          <span class="section-kicker">Core Solutions</span>
-          <h2 class="section-title mt-5">核心產品與<span class="gradient-text">技術解決方案</span></h2>
-          <p class="muted-copy mt-5">從視覺創意到空間氛圍與社群溝通，整合設計與行銷思維，為品牌打造完整而有溫度的體驗。</p>
-        </div>
-
-        <div class="mt-12 grid gap-5 md:grid-cols-3">
-          <article class="glass-panel interactive-card rounded-[25px] p-6 reveal">
-            <div class="icon-tile"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
-            <p class="mt-6 text-xs font-bold tracking-[.16em] text-blue-600">01 / VISUAL DESIGN</p>
-            <h3 class="mt-3 text-xl font-bold">視覺設計</h3>
-            <p class="mt-3 text-sm leading-7 text-slate-500">透過創意構思與美學規劃，打造具有品牌特色的視覺作品，涵蓋平面設計、廣告文宣、活動海報及品牌形象設計，讓每一份設計都能有效傳遞品牌理念，提升視覺吸引力與市場辨識度。</p>
-          </article>
-
-          <article class="glass-panel interactive-card rounded-[25px] p-6 reveal delay-1">
-            <div class="icon-tile"><i class="fa-solid fa-couch" aria-hidden="true"></i></div>
-            <p class="mt-6 text-xs font-bold tracking-[.16em] text-violet-600">02 / INTERIOR STYLING</p>
-            <h3 class="mt-3 text-xl font-bold">軟裝布置</h3>
-            <p class="mt-3 text-sm leading-7 text-slate-500">結合色彩搭配、家具選品、燈光配置與空間美學，為不同場域注入風格與溫度。透過細膩的軟裝規劃，營造兼具美感、舒適度與實用性的空間氛圍，展現獨特的生活品味與品牌個性。</p>
-          </article>
-
-          <article class="glass-panel interactive-card rounded-[25px] p-6 reveal delay-2">
-            <div class="icon-tile"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i></div>
-            <p class="mt-6 text-xs font-bold tracking-[.16em] text-emerald-600">03 / SOCIAL MARKETING</p>
-            <h3 class="mt-3 text-xl font-bold">社群行銷</h3>
-            <p class="mt-3 text-sm leading-7 text-slate-500">結合社群經營、內容企劃、視覺素材設計與行銷策略，打造具有吸引力的品牌社群。透過精準的內容溝通與創意行銷，提升品牌曝光、增加粉絲互動，並將社群流量轉化為實際商業價值。</p>
-          </article>
+    <section id="work" class="section">
+      <div class="container">
+        <div class="work-head"><div class="section-heading reveal"><span class="eyebrow">Selected work</span><h2>真實專案，<span class="highlight">真實累積。</span></h2><p>以不同產業與情境為練習，持續探索設計如何解決問題、建立感受。</p></div><div class="filter-list reveal" role="group" aria-label="作品分類"><button class="filter-btn is-active" data-filter="all" aria-pressed="true">全部</button><button class="filter-btn" data-filter="brand" aria-pressed="false">品牌與空間</button><button class="filter-btn" data-filter="product" aria-pressed="false">產品設計</button><button class="filter-btn" data-filter="visual" aria-pressed="false">視覺創作</button></div></div>
+        <div class="project-grid">
+          <article class="project-card project-card--tall reveal" data-category="brand"><div class="project-image"><img src="作品集/2024牙醫診所.JPG" alt="2024 牙醫診所專案作品" loading="lazy" /></div><div class="project-meta"><small>2024 / SPACE & BRAND</small><h3>牙醫診所品牌與空間</h3><p>以專業、安心與溫度為核心，整理診所形象與空間視覺。</p></div></article>
+          <article class="project-card reveal" data-category="product"><div class="project-image"><img src="作品集/2024-2025廚具設計.jpg" alt="2024 至 2025 廚具設計專案作品" loading="lazy" /></div><div class="project-meta"><small>2024–2025 / PRODUCT</small><h3>廚具設計與生活提案</h3><p>從材質、色彩到使用情境，呈現兼具美感與機能的產品提案。</p></div></article>
+          <article class="project-card reveal" data-category="brand"><div class="project-image"><img src="作品集/2023醫美診所.jpg" alt="2023 醫美診所專案作品" loading="lazy" /></div><div class="project-meta"><small>2023 / VISUAL IDENTITY</small><h3>醫美診所視覺規劃</h3><p>以細緻、信任與現代感建立完整的品牌視覺語言。</p></div></article>
+          <article class="project-card project-card--tall reveal" data-category="visual"><div class="project-image"><img src="作品集/2020-2022文創繪圖.JPG" alt="2020 至 2022 文創繪圖專案作品" loading="lazy" /></div><div class="project-meta"><small>2020–2022 / ILLUSTRATION</small><h3>文創繪圖與角色創作</h3><p>以插畫與圖像敘事，發展具有辨識度的文創視覺內容。</p></div></article>
+          <article class="project-card reveal" data-category="visual"><div class="project-image"><img src="作品集/2015-2016燈控公司.png" alt="2015 至 2016 燈控公司專案作品" loading="lazy" /></div><div class="project-meta"><small>2015–2016 / COMMERCIAL DESIGN</small><h3>燈控品牌商業設計</h3><p>將產品功能轉化為清晰、有吸引力的商業溝通素材。</p></div></article>
         </div>
       </div>
     </section>
 
-    <!-- 5. Contact -->
-    <section id="contact" class="section-pad relative overflow-hidden bg-gradient-to-b from-white/30 via-blue-50/25 to-violet-50/30">
-      <div class="absolute -left-40 top-16 h-96 w-96 rounded-full bg-blue-100/40 blur-3xl" aria-hidden="true"></div>
-      <div class="absolute -right-28 bottom-0 h-96 w-96 rounded-full bg-violet-100/35 blur-3xl" aria-hidden="true"></div>
-      <div class="page-shell relative">
-        <div class="mx-auto max-w-2xl text-center reveal"><span class="section-kicker">Let's Connect</span><h2 class="section-title mt-5">下一個好點子，<span class="gradient-text">一起實現。</span></h2><p class="muted-copy mt-5">不論是品牌視覺、跨媒介內容，或是想把模糊的想法整理成清楚方向，都歡迎開啟對話。</p></div>
-        <div class="mt-12 grid items-start gap-6 lg:grid-cols-[1.08fr_.92fr]">
-          <div class="glass-panel rounded-[28px] p-6 sm:p-8 reveal">
-            <div class="flex items-start justify-between gap-4"><div><p class="text-xs font-bold tracking-[.16em] text-blue-600">PROJECT INQUIRY</p><h3 class="mt-2 text-xl font-bold">告訴我你的想法</h3><p class="mt-2 text-sm leading-6 text-slate-500">提供幾個方向，讓我們從第一步開始對焦。</p></div><span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-blue-50 text-blue-600"><i class="fa-regular fa-paper-plane text-lg"></i></span></div>
-            <form id="contact-form" class="mt-7 space-y-5">
-              <div class="grid gap-4 sm:grid-cols-2">
-                <div><label for="contact-name" class="mb-2 block text-xs font-bold text-slate-600">姓名 <span class="text-rose-400">*</span></label><input id="contact-name" name="name" class="form-control" type="text" placeholder="怎麼稱呼你？" autocomplete="name" required /></div>
-                <div><label for="contact-email" class="mb-2 block text-xs font-bold text-slate-600">Email <span class="text-rose-400">*</span></label><input id="contact-email" name="email" class="form-control" type="email" placeholder="name@example.com" autocomplete="email" required /></div>
-              </div>
-              <div><label for="contact-type" class="mb-2 block text-xs font-bold text-slate-600">需求類型 <span class="text-rose-400">*</span></label><select id="contact-type" name="type" class="form-control" required><option value="" disabled selected>選擇最接近的合作方向</option><option>品牌識別與視覺整合</option><option>平面設計／行銷文宣</option><option>產品與 3D 視覺提案</option><option>AI 設計流程與敏捷賦能</option><option>企劃／社群／動態影像</option><option>其他合作或交流</option></select></div>
-              <div><label for="contact-message" class="mb-2 block text-xs font-bold text-slate-600">專案想法 <span class="text-rose-400">*</span></label><textarea id="contact-message" name="message" class="form-control min-h-[130px] resize-y" placeholder="目前的目標、預期時程、想解決的問題……" required></textarea></div>
-              <button type="submit" class="primary-button w-full">準備諮詢郵件 <i class="fa-solid fa-arrow-right text-xs"></i></button>
-              <p class="text-[11px] leading-5 text-slate-400"><i class="fa-solid fa-lock mr-1"></i> 此表單不會將資料上傳到伺服器；送出後會嘗試開啟你的郵件應用程式，請確認內容與收件人再寄送。</p>
-              <p id="form-feedback" class="hidden rounded-xl border border-blue-100 bg-blue-50/80 px-4 py-3 text-xs leading-6 text-blue-800" role="status" aria-live="polite"></p>
-            </form>
-          </div>
-
-          <div class="space-y-5 reveal delay-1">
-            <div class="glass-panel rounded-[25px] border border-blue-100/80 px-6 py-5 shadow-[0_14px_40px_rgba(37,99,235,.06)] sm:px-7">
-              <div class="flex items-center gap-3"><span class="grid h-10 w-10 place-items-center rounded-xl bg-blue-50 text-blue-600"><i class="fa-solid fa-file-pen text-lg" aria-hidden="true"></i></span><div><p class="text-sm font-bold">填寫需求表單</p><p class="mt-1 text-xs text-slate-500">請先提供專案需求，方便我更了解你的合作方向。</p></div></div>
-              <a class="primary-button mt-4 w-full" href="https://forms.gle/tN5DUWCAAWmKz8gG9" target="_blank" rel="noopener noreferrer">開啟需求表單 <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i></a>
-            </div>
-            <div class="relative overflow-hidden rounded-[28px] border border-white/90 bg-gradient-to-br from-blue-600 via-indigo-600 to-violet-600 p-7 text-white shadow-[0_22px_65px_rgba(79,70,229,.22)] sm:p-8">
-              <div class="absolute -right-12 -top-14 h-52 w-52 rounded-full border border-white/15"></div><div class="absolute -right-2 -top-2 h-32 w-32 rounded-full border border-white/20"></div><div class="absolute bottom-0 right-12 h-28 w-28 rounded-full bg-emerald-300/20 blur-2xl"></div>
-              <div class="relative"><span class="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-[10px] font-bold tracking-[.16em]"><span class="h-1.5 w-1.5 rounded-full bg-emerald-300"></span> 1-ON-1 CONSULTATION</span><h3 class="mt-6 text-2xl font-bold leading-snug tracking-[-.04em]">線上預約<br />一對一諮詢</h3><p class="mt-4 max-w-sm text-sm leading-7 text-blue-50/85">預約一段專注的時間，梳理你的品牌目標、目前挑戰與可行的視覺策略。</p><a href="https://calendar.app.google/BkCQoLMJNLMw4RFDA" target="_blank" rel="noopener noreferrer" class="mt-7 inline-flex items-center gap-3 rounded-full bg-white px-5 py-3.5 text-sm font-bold text-blue-700 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">開啟 Google Calendar <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a><p class="mt-4 text-[11px] leading-5 text-blue-100/75">實際可預約時段與會議方式，以行事曆頁面設定為準。</p></div>
-            </div>
-            <div class="glass-panel rounded-[25px] px-6 py-5 sm:px-7">
-              <div class="flex items-center gap-3"><span class="grid h-10 w-10 place-items-center rounded-xl bg-emerald-50 text-emerald-600"><i class="fa-brands fa-line text-lg"></i></span><div><p class="text-sm font-bold">偏好文字交流？</p><p class="mt-1 text-xs text-slate-500">也可以透過 LINE 聯繫，從簡單的需求討論開始。</p></div></div>
-              <a class="mt-4 flex items-center justify-between rounded-xl border border-slate-200/75 bg-white/75 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-emerald-200 hover:text-emerald-700" href="https://line.me/ti/p/ai2RFL-OAT" target="_blank" rel="noopener noreferrer"><span>加入 LINE 聯絡我</span><i class="fa-brands fa-line text-lg text-emerald-600"></i></a>
-            </div>
-            <div class="glass-panel rounded-[25px] px-6 py-5 sm:px-7">
-              <div class="flex items-center gap-3"><span class="grid h-10 w-10 place-items-center rounded-xl bg-violet-50 text-violet-600"><i class="fa-regular fa-circle-question"></i></span><div><p class="text-sm font-bold">常見問題 FAQ</p><p class="mt-1 text-xs text-slate-500">開始合作前，先快速了解。</p></div></div>
-              <div class="mt-3">
-                <details class="faq-item"><summary>合作流程通常如何進行？ <i class="fa-solid fa-plus text-xs"></i></summary><div class="faq-answer">通常會先釐清目標、受眾、時程與交付需求，再確認方向與範圍；進入設計提案後，依約定節點回饋、調整並整理最終檔案。實際流程會依專案規模彈性安排。</div></details>
-                <details class="faq-item"><summary>服務時程大約需要多久？ <i class="fa-solid fa-plus text-xs"></i></summary><div class="faq-answer">時程會依素材完整度、需求複雜度、交付數量與回饋速度而定。初步討論後會再確認合理的時程與階段交付方式，不以未確認的天數做保證。</div></details>
-                <details class="faq-item"><summary>可以只委託單一設計，或跨域整合嗎？ <i class="fa-solid fa-plus text-xs"></i></summary><div class="faq-answer">可以依需求討論單張文宣、社群視覺、品牌識別、產品視覺、動態內容或跨媒介整合。合作範圍會以目標、預算與可用資源一起對焦。</div></details>
-                <details class="faq-item"><summary>第一次聯繫需要準備什麼？ <i class="fa-solid fa-plus text-xs"></i></summary><div class="faq-answer">提供品牌／產品簡介、想達成的目標、預計使用的媒介與期望時程即可；如果還沒有完整資料，也可以先描述目前卡住的問題，再一起整理。</div></details>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section id="contact" class="section contact-section">
+      <div class="container contact-grid">
+        <div class="reveal"><div class="section-heading"><span class="eyebrow">Let's connect</span><h2>有一個想法，<br /><span style="color: var(--gold);">我們可以一起整理。</span></h2><p>不需要一開始就準備完整答案。先說說你的品牌、目前的問題與想完成的事，從一次輕鬆的對話開始。</p></div><div class="contact-actions"><a class="btn btn--primary" href="https://forms.gle/tN5DUWCAAWmKz8gG9" target="_blank" rel="noopener noreferrer">填寫需求表單 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="btn btn--outline" href="https://calendar.app.google/BkCQoLMJNLMw4RFDA" target="_blank" rel="noopener noreferrer">預約一對一諮詢 <i class="fa-regular fa-calendar" aria-hidden="true"></i></a></div><div class="contact-info"><a href="https://line.me/ti/p/ai2RFL-OAT" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-line" aria-hidden="true"></i> 透過 LINE 聯絡我</a><a href="mailto:?subject=合作諮詢｜張穎華"><i class="fa-regular fa-envelope" aria-hidden="true"></i> 寄送合作 Email</a></div></div>
+        <div class="contact-panel reveal"><h3>合作前，先準備這些就好</h3><p>填寫表單時提供幾個方向，能讓後續討論更有效率。</p><div class="contact-options"><a class="contact-option" href="https://forms.gle/tN5DUWCAAWmKz8gG9" target="_blank" rel="noopener noreferrer"><span class="contact-option-main"><span class="contact-option-icon"><i class="fa-solid fa-file-pen" aria-hidden="true"></i></span><span><strong>專案目標</strong><span>想解決什麼問題？</span></span></span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="contact-option" href="https://forms.gle/tN5DUWCAAWmKz8gG9" target="_blank" rel="noopener noreferrer"><span class="contact-option-main"><span class="contact-option-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></span><span><strong>預計時程</strong><span>大約何時需要完成？</span></span></span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a class="contact-option" href="https://forms.gle/tN5DUWCAAWmKz8gG9" target="_blank" rel="noopener noreferrer"><span class="contact-option-main"><span class="contact-option-icon"><i class="fa-solid fa-image" aria-hidden="true"></i></span><span><strong>參考方向</strong><span>喜歡的風格或案例。</span></span></span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="border-t border-slate-200/70 bg-white/58 pt-9 pb-8 backdrop-blur-lg">
-    <div class="page-shell">
-      <div class="flex flex-col justify-between gap-7 md:flex-row md:items-center">
-        <a href="#home" class="flex items-center gap-3"><span class="grid h-10 w-10 place-items-center rounded-[14px] border border-blue-100 bg-white shadow-sm"><span class="text-[17px] font-extrabold tracking-[-.12em] gradient-text">067</span></span><span><span class="block text-sm font-bold text-slate-800">張穎華 Ying-Hua Chang</span><span class="mt-1 block text-[10px] tracking-[.2em] text-slate-400">067淬 · DESIGN WITH PURPOSE</span></span></a>
-        <div class="flex items-center gap-2.5">
-          <a href="mailto:?subject=%E5%90%88%E4%BD%9C%E8%AB%AE%E8%A9%A2%EF%BD%9C%E5%BC%B5%E7%A9%8E%E8%8F%AF" class="social-link" aria-label="Email 聯絡" title="Email"><i class="fa-regular fa-envelope"></i></a>
-          <a href="https://line.me/ti/p/ai2RFL-OAT" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LINE 聯絡我" title="LINE"><i class="fa-brands fa-line"></i></a>
-          <a href="#contact" class="social-link profile-placeholder" data-profile="Behance" aria-label="Behance 個人檔案連結待設定" title="Behance 個人檔案連結待設定"><i class="fa-brands fa-behance"></i></a>
-          <a href="#contact" class="social-link profile-placeholder" data-profile="LinkedIn" aria-label="LinkedIn 個人檔案連結待設定" title="LinkedIn 個人檔案連結待設定"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#contact" class="social-link profile-placeholder" data-profile="GitHub" aria-label="GitHub 個人檔案連結待設定" title="GitHub 個人檔案連結待設定"><i class="fa-brands fa-github"></i></a>
-        </div>
-      </div>
-      <div class="mt-8 flex flex-col justify-between gap-3 border-t border-slate-200/65 pt-5 text-[11px] text-slate-400 sm:flex-row sm:items-center"><p>© <span id="current-year">2026</span> Ying-Hua Chang · 067淬. All rights reserved.</p><p>Thoughtful design. Clear communication. Meaningful impact.</p></div>
-      <p class="mt-3 text-[10px] leading-5 text-slate-400">上線前設定提醒：請補上個人 Email、Behance、LinkedIn、GitHub 個人頁網址，以及可公開展示的真實作品與成果資料。</p>
+  <div id="project-modal-backdrop" class="modal-backdrop" aria-hidden="true">
+    <div class="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button id="modal-close" class="modal-close" type="button" aria-label="關閉專案詳情"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      <div class="modal-image"><img id="modal-image" src="" alt="" /></div>
+      <div class="modal-content"><small id="modal-category"></small><h2 id="modal-title"></h2><p id="modal-description"></p><span id="modal-index" class="modal-index"></span><div class="modal-navigation"><button id="modal-prev" type="button"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> 上一個</button><button id="modal-next" type="button">下一個 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div></div>
     </div>
-  </footer>
+  </div>
 
-  <!-- Printable resume content; visible only from the browser's print dialog -->
-  <section id="resume-printable" aria-label="張穎華個人履歷列印版">
-    <h1>張穎華 Ying-Hua Chang</h1>
-    <p class="resume-meta">067淬｜視覺設計・品牌視覺整合・企劃與 AI 敏捷賦能</p>
-    <div class="resume-highlight"><p><strong>個人理念</strong><br />設計不只是美感的堆疊，而是讓訊息精準傳遞、讓品牌被看見與記得的溝通橋樑。</p></div>
-    <h2>個人簡介</h2>
-    <p>專注於平面設計與品牌視覺整合，職涯橫跨視覺設計、企劃與品牌推廣。從全貌思維出發，將抽象的商業需求與品牌理念轉化為具視覺衝擊力且能精準溝通的設計方案；重視設計細節、跨界協作與工具整合，讓策略、設計與執行保持一致。</p>
-    <h2>核心價值</h2>
-    <ul>
-      <li><strong>全流程實戰與精準執行：</strong>熟悉概念發想、風格定位、視覺編排、色彩規劃到完稿輸出的流程。</li>
-      <li><strong>跨界思維與高效協作：</strong>以視覺溝通連結行銷、營運與專案團隊，讓需求轉譯更有效率。</li>
-      <li><strong>創新視覺與品牌個性：</strong>發掘品牌 DNA，結合當代視覺趨勢建立一致且具有辨識度的體驗。</li>
-    </ul>
-    <h2>能力與工具</h2>
-    <ul>
-      <li><strong>平面視覺：</strong>Photoshop、Illustrator、InDesign</li>
-      <li><strong>3D 與產品視覺：</strong>AutoCAD、SolidWorks、KeyShot</li>
-      <li><strong>AI 與敏捷設計：</strong>AI 繪圖與設計輔助工具、Canva</li>
-      <li><strong>企劃與動態影像：</strong>企劃執行、社群行銷、威力導演、會聲會影</li>
-      <li><strong>辦公與專案整理：</strong>Word、Excel、PowerPoint、資訊與時程梳理</li>
-    </ul>
-    <h2>合作方向</h2>
-    <p>品牌識別與視覺整合、平面設計與行銷文宣、產品與 3D 視覺提案、AI 設計流程與敏捷賦能、企劃／社群／動態影像整合。</p>
-    <p class="resume-meta">聯絡方式：LINE @067ycjia ｜ 請於正式履歷公開前補上個人 Email 及其他聯絡資訊。</p>
-  </section>
-
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <footer class="site-footer"><div class="container footer-row"><span>© <span id="current-year">2026</span> 張穎華 Ying-Hua Chang · Design with purpose.</span><div class="footer-socials"><a href="https://line.me/ti/p/ai2RFL-OAT" target="_blank" rel="noopener noreferrer" aria-label="LINE"><i class="fa-brands fa-line" aria-hidden="true"></i></a><a href="mailto:?subject=合作諮詢｜張穎華" aria-label="Email"><i class="fa-regular fa-envelope" aria-hidden="true"></i></a></div></div></footer>
 
   <script>
     (() => {
-      'use strict';
+      const header = document.querySelector('.site-header');
+      const progress = document.getElementById('scroll-progress');
+      const heroArt = document.querySelector('.hero-art');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let ticking = false;
 
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      // Typewriter headline
-      const typewriter = document.getElementById('typewriter');
-      const typeCaret = document.getElementById('type-caret');
-      if (typewriter) {
-        const fullText = typewriter.dataset.text || '';
-        if (reducedMotion) {
-          typewriter.textContent = fullText;
-          if (typeCaret) typeCaret.style.display = 'none';
-        } else {
-          const characters = Array.from(fullText);
-          let index = 0;
-          typewriter.textContent = '';
-          const typeNext = () => {
-            if (index < characters.length) {
-              typewriter.textContent += characters[index];
-              index += 1;
-              window.setTimeout(typeNext, index < 5 ? 150 : 86);
-            } else if (typeCaret) {
-              window.setTimeout(() => { typeCaret.style.opacity = '.42'; }, 1600);
-            }
-          };
-          window.setTimeout(typeNext, 380);
+      const updateScrollUI = () => {
+        const scrollTop = window.scrollY;
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        if (header) header.classList.toggle('is-scrolled', scrollTop > 16);
+        if (progress) progress.style.width = `${scrollable > 0 ? (scrollTop / scrollable) * 100 : 0}%`;
+        if (!reduceMotion && heroArt && window.innerWidth > 900) {
+          const offset = Math.min(scrollTop * .045, 22);
+          heroArt.style.transform = `translate3d(0, ${offset}px, 0)`;
         }
-      }
+        ticking = false;
+      };
+      const requestScrollUpdate = () => {
+        if (!ticking) { window.requestAnimationFrame(updateScrollUI); ticking = true; }
+      };
+      window.addEventListener('scroll', requestScrollUpdate, { passive: true });
+      window.addEventListener('resize', requestScrollUpdate, { passive: true });
+      updateScrollUI();
 
-      // Calm particle network on canvas
-      const canvas = document.getElementById('particle-canvas');
-      const ctx = canvas ? canvas.getContext('2d') : null;
-      let particles = [];
-      let canvasWidth = 0;
-      let canvasHeight = 0;
-      let animationFrame = 0;
-      const pointer = { x: -1000, y: -1000 };
-
-      function resizeCanvas() {
-        if (!canvas || !ctx) return;
-        const dpr = Math.min(window.devicePixelRatio || 1, 1.7);
-        canvasWidth = window.innerWidth;
-        canvasHeight = window.innerHeight;
-        canvas.width = Math.floor(canvasWidth * dpr);
-        canvas.height = Math.floor(canvasHeight * dpr);
-        canvas.style.width = canvasWidth + 'px';
-        canvas.style.height = canvasHeight + 'px';
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        const count = Math.min(76, Math.max(28, Math.floor((canvasWidth * canvasHeight) / 19000)));
-        particles = Array.from({ length: count }, () => ({
-          x: Math.random() * canvasWidth,
-          y: Math.random() * canvasHeight,
-          vx: (Math.random() - .5) * .19,
-          vy: (Math.random() - .5) * .19,
-          radius: Math.random() * 1.5 + .45,
-          phase: Math.random() * Math.PI * 2
-        }));
-      }
-
-      function drawParticles() {
-        if (!ctx || !canvas) return;
-        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-        const linkDistance = canvasWidth < 640 ? 95 : 135;
-        particles.forEach((p, i) => {
-          p.phase += .008;
-          if (!reducedMotion) {
-            p.x += p.vx;
-            p.y += p.vy;
-            if (p.x < -10) p.x = canvasWidth + 10;
-            if (p.x > canvasWidth + 10) p.x = -10;
-            if (p.y < -10) p.y = canvasHeight + 10;
-            if (p.y > canvasHeight + 10) p.y = -10;
-          }
-          const pulse = .65 + Math.sin(p.phase) * .2;
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.radius * pulse, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(96, 142, 225, 0.37)';
-          ctx.fill();
-          for (let j = i + 1; j < particles.length; j += 1) {
-            const q = particles[j];
-            const dx = p.x - q.x;
-            const dy = p.y - q.y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-            if (distance < linkDistance) {
-              const alpha = (1 - distance / linkDistance) * .14;
-              ctx.beginPath();
-              ctx.moveTo(p.x, p.y);
-              ctx.lineTo(q.x, q.y);
-              ctx.strokeStyle = `rgba(94, 132, 210, ${alpha})`;
-              ctx.lineWidth = .7;
-              ctx.stroke();
-            }
-          }
-          const pdx = p.x - pointer.x;
-          const pdy = p.y - pointer.y;
-          if (pdx * pdx + pdy * pdy < 130 * 130) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(pointer.x, pointer.y);
-            ctx.strokeStyle = 'rgba(16, 185, 129, .16)';
-            ctx.lineWidth = .8;
-            ctx.stroke();
-          }
+      const cursorOrb = document.getElementById('cursor-orb');
+      const desktopPointer = window.matchMedia('(pointer: fine)').matches;
+      if (cursorOrb && desktopPointer && !reduceMotion) {
+        let cursorX = 0;
+        let cursorY = 0;
+        let cursorFrame = 0;
+        const moveCursor = (event) => {
+          cursorX = event.clientX;
+          cursorY = event.clientY;
+          cursorOrb.classList.add('is-active');
+          if (!cursorFrame) cursorFrame = window.requestAnimationFrame(() => {
+            cursorOrb.style.left = `${cursorX}px`;
+            cursorOrb.style.top = `${cursorY}px`;
+            cursorFrame = 0;
+          });
+        };
+        window.addEventListener('pointermove', moveCursor, { passive: true });
+        document.addEventListener('mouseleave', () => cursorOrb.classList.remove('is-active'));
+        document.querySelectorAll('a, button, .project-card, .service-card').forEach((item) => {
+          item.addEventListener('mouseenter', () => cursorOrb.classList.add('is-active'));
         });
-        if (!reducedMotion) animationFrame = window.requestAnimationFrame(drawParticles);
       }
 
-      if (canvas && ctx) {
-        resizeCanvas();
-        if (reducedMotion) drawParticles();
-        else animationFrame = window.requestAnimationFrame(drawParticles);
-        window.addEventListener('resize', () => {
-          window.cancelAnimationFrame(animationFrame);
-          resizeCanvas();
-          if (reducedMotion) drawParticles();
-          else animationFrame = window.requestAnimationFrame(drawParticles);
-        }, { passive: true });
-        window.addEventListener('pointermove', (event) => {
-          pointer.x = event.clientX;
-          pointer.y = event.clientY;
-        }, { passive: true });
-        window.addEventListener('pointerleave', () => { pointer.x = -1000; pointer.y = -1000; }, { passive: true });
+      if (desktopPointer && !reduceMotion) {
+        document.querySelectorAll('.project-card').forEach((card) => {
+          card.addEventListener('pointermove', (event) => {
+            const rect = card.getBoundingClientRect();
+            const x = (event.clientX - rect.left) / rect.width - .5;
+            const y = (event.clientY - rect.top) / rect.height - .5;
+            card.style.transform = `perspective(900px) rotateX(${y * -4}deg) rotateY(${x * 4}deg) translateY(-6px)`;
+          });
+          card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+        });
+        document.querySelectorAll('.btn').forEach((button) => {
+          button.addEventListener('pointermove', (event) => {
+            const rect = button.getBoundingClientRect();
+            const x = (event.clientX - rect.left - rect.width / 2) * .08;
+            const y = (event.clientY - rect.top - rect.height / 2) * .08;
+            button.style.transform = `translate(${x}px, ${y}px)`;
+          });
+          button.addEventListener('pointerleave', () => { button.style.transform = ''; });
+        });
       }
 
-      // Mobile navigation
-      const menuToggle = document.getElementById('mobile-menu-toggle');
+      const menuToggle = document.getElementById('menu-toggle');
       const mobileMenu = document.getElementById('mobile-menu');
       if (menuToggle && mobileMenu) {
         menuToggle.addEventListener('click', () => {
           const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
           menuToggle.setAttribute('aria-expanded', String(!isOpen));
-          menuToggle.setAttribute('aria-label', isOpen ? '開啟行動版導覽選單' : '關閉行動版導覽選單');
-          mobileMenu.classList.toggle('hidden', isOpen);
-          menuToggle.innerHTML = isOpen ? '<i class="fa-solid fa-bars"></i>' : '<i class="fa-solid fa-xmark"></i>';
+          menuToggle.setAttribute('aria-label', isOpen ? '開啟選單' : '關閉選單');
+          menuToggle.innerHTML = isOpen ? '<i class="fa-solid fa-bars" aria-hidden="true"></i>' : '<i class="fa-solid fa-xmark" aria-hidden="true"></i>';
+          mobileMenu.classList.toggle('is-open', !isOpen);
         });
-        mobileMenu.querySelectorAll('a').forEach((link) => {
-          link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            menuToggle.setAttribute('aria-expanded', 'false');
-            menuToggle.setAttribute('aria-label', '開啟行動版導覽選單');
-            menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
-          });
-        });
-        window.addEventListener('resize', () => {
-          if (window.innerWidth >= 1024) {
-            mobileMenu.classList.add('hidden');
-            menuToggle.setAttribute('aria-expanded', 'false');
-            menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
-          }
-        }, { passive: true });
+        mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+          mobileMenu.classList.remove('is-open');
+        }));
       }
 
-      // Status button micro-interaction
-      const statusButton = document.getElementById('status-button');
-      const statusLabel = document.getElementById('status-label');
-      if (statusButton && statusLabel) {
-        const restingLabel = '開啟合作對話';
-        const readyLabel = 'Status: Ready to Connect';
-        statusButton.addEventListener('mouseenter', () => { statusLabel.textContent = readyLabel; });
-        statusButton.addEventListener('mouseleave', () => { statusLabel.textContent = restingLabel; });
-        statusButton.addEventListener('focus', () => { statusLabel.textContent = readyLabel; });
-        statusButton.addEventListener('blur', () => { statusLabel.textContent = restingLabel; });
-        statusButton.addEventListener('click', () => { document.getElementById('contact')?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' }); });
-      }
-
-      // Smooth-scroll links and active navigation states
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener('click', (event) => {
-          const id = anchor.getAttribute('href');
-          if (!id || id === '#') return;
-          const target = document.querySelector(id);
-          if (target) {
-            event.preventDefault();
-            target.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
-            if (history.replaceState) history.replaceState(null, '', id);
-          }
-        });
-      });
-      const sections = ['home', 'about', 'capabilities', 'portfolio', 'contact'].map((id) => document.getElementById(id)).filter(Boolean);
-      const navLinks = Array.from(document.querySelectorAll('#desktop-nav .nav-link'));
-      if ('IntersectionObserver' in window && navLinks.length) {
-        const sectionObserver = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              navLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
-            }
-          });
-        }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
-        sections.forEach((section) => sectionObserver.observe(section));
-      }
-
-      // Reveal sections on scroll
       const revealItems = document.querySelectorAll('.reveal');
-      if (reducedMotion || !('IntersectionObserver' in window)) {
-        revealItems.forEach((item) => item.classList.add('revealed'));
-      } else {
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('revealed');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: .12, rootMargin: '0px 0px -35px 0px' });
-        revealItems.forEach((item) => revealObserver.observe(item));
+      if (reduceMotion || !('IntersectionObserver' in window)) revealItems.forEach((item) => item.classList.add('is-visible'));
+      else {
+        const observer = new IntersectionObserver((entries, instance) => entries.forEach((entry) => {
+          if (entry.isIntersecting) { entry.target.classList.add('is-visible'); instance.unobserve(entry.target); }
+        }), { threshold: .12, rootMargin: '0px 0px -30px 0px' });
+        revealItems.forEach((item) => observer.observe(item));
       }
 
-      // Portfolio filters
-      const filterButtons = document.querySelectorAll('.portfolio-filter');
-      const portfolioCards = document.querySelectorAll('.portfolio-card');
-      filterButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-          const selected = button.dataset.filter;
-          filterButtons.forEach((other) => {
-            const active = other === button;
-            other.classList.toggle('active', active);
-            other.setAttribute('aria-pressed', String(active));
-          });
-          portfolioCards.forEach((card) => {
-            const show = selected === 'all' || card.dataset.category === selected;
-            card.classList.toggle('is-hidden', !show);
-            if (show) {
-              card.classList.remove('revealed');
-              window.requestAnimationFrame(() => card.classList.add('revealed'));
-            }
-          });
+      const projectModal = document.getElementById('project-modal-backdrop');
+      const modalImage = document.getElementById('modal-image');
+      const modalCategory = document.getElementById('modal-category');
+      const modalTitle = document.getElementById('modal-title');
+      const modalDescription = document.getElementById('modal-description');
+      const modalIndex = document.getElementById('modal-index');
+      const modalClose = document.getElementById('modal-close');
+      const modalPrev = document.getElementById('modal-prev');
+      const modalNext = document.getElementById('modal-next');
+      let activeProjectCards = [];
+      let activeProjectIndex = 0;
+      let lastFocusedElement = null;
+
+      const renderProjectModal = () => {
+        const card = activeProjectCards[activeProjectIndex];
+        if (!card) return;
+        const image = card.querySelector('img');
+        const category = card.querySelector('.project-meta small');
+        const title = card.querySelector('.project-meta h3');
+        const description = card.querySelector('.project-meta p');
+        modalImage.src = image.src;
+        modalImage.alt = image.alt;
+        modalCategory.textContent = category.textContent;
+        modalTitle.textContent = title.textContent;
+        modalDescription.textContent = description.textContent;
+        modalIndex.textContent = `${String(activeProjectIndex + 1).padStart(2, '0')} / ${String(activeProjectCards.length).padStart(2, '0')}`;
+      };
+      const closeProjectModal = () => {
+        projectModal.classList.remove('is-open');
+        projectModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (lastFocusedElement) lastFocusedElement.focus();
+      };
+      const openProjectModal = (card) => {
+        activeProjectCards = [...document.querySelectorAll('.project-card:not(.is-hidden)')];
+        activeProjectIndex = Math.max(0, activeProjectCards.indexOf(card));
+        lastFocusedElement = card;
+        renderProjectModal();
+        projectModal.classList.add('is-open');
+        projectModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        modalClose.focus();
+      };
+      document.querySelectorAll('.project-card').forEach((card) => {
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        const label = document.createElement('span');
+        label.className = 'project-open-label';
+        label.innerHTML = '查看專案 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>';
+        card.querySelector('.project-meta').appendChild(label);
+        card.addEventListener('click', () => openProjectModal(card));
+        card.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openProjectModal(card); }
         });
       });
-
-      // Toast message
-      const toast = document.getElementById('toast');
-      let toastTimer = 0;
-      function showToast(message) {
-        if (!toast) return;
-        toast.textContent = message;
-        toast.classList.add('visible');
-        window.clearTimeout(toastTimer);
-        toastTimer = window.setTimeout(() => toast.classList.remove('visible'), 4300);
-      }
-      document.querySelectorAll('.profile-placeholder').forEach((link) => {
-        link.addEventListener('click', (event) => {
-          event.preventDefault();
-          const profile = link.dataset.profile || '社群';
-          showToast(`請將 HTML 頁尾的 ${profile} 連結替換成你的個人檔案網址，再正式公開網站。`);
-        });
+      document.querySelectorAll('.service-card').forEach((card) => {
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-expanded', 'false');
+        const toggleService = () => {
+          const expanded = card.classList.toggle('is-expanded');
+          card.setAttribute('aria-expanded', String(expanded));
+        };
+        card.addEventListener('click', toggleService);
+        card.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleService(); } });
+      });
+      modalClose.addEventListener('click', closeProjectModal);
+      projectModal.addEventListener('click', (event) => { if (event.target === projectModal) closeProjectModal(); });
+      modalPrev.addEventListener('click', () => { activeProjectIndex = (activeProjectIndex - 1 + activeProjectCards.length) % activeProjectCards.length; renderProjectModal(); });
+      modalNext.addEventListener('click', () => { activeProjectIndex = (activeProjectIndex + 1) % activeProjectCards.length; renderProjectModal(); });
+      document.addEventListener('keydown', (event) => {
+        if (!projectModal.classList.contains('is-open')) return;
+        if (event.key === 'Escape') closeProjectModal();
+        if (event.key === 'ArrowLeft') modalPrev.click();
+        if (event.key === 'ArrowRight') modalNext.click();
       });
 
-      // Contact form: validate in browser and prepare a mailto draft (no server submission)
-      const contactForm = document.getElementById('contact-form');
-      const formFeedback = document.getElementById('form-feedback');
-      if (contactForm && formFeedback) {
-        contactForm.addEventListener('submit', (event) => {
-          event.preventDefault();
-          if (!contactForm.reportValidity()) return;
-          const formData = new FormData(contactForm);
-          const name = String(formData.get('name') || '').trim();
-          const email = String(formData.get('email') || '').trim();
-          const type = String(formData.get('type') || '').trim();
-          const message = String(formData.get('message') || '').trim();
-          const subject = `合作諮詢｜${type}｜${name}`;
-          const body = `張穎華 Ying-Hua Chang 您好：\n\n我想諮詢以下合作需求。\n\n姓名：${name}\nEmail：${email}\n需求類型：${type}\n\n專案想法：\n${message}\n\n（請在寄出前補上收件人地址。）`;
-          formFeedback.textContent = '已完成欄位檢查，正在準備郵件草稿。請在郵件應用程式中填入收件地址，確認內容後再寄出。';
-          formFeedback.classList.remove('hidden');
-          const mailto = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-          window.location.href = mailto;
-          showToast('已準備好合作諮詢郵件草稿；此網頁不會自動傳送或儲存你的資料。');
-        });
-      }
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+      filterButtons.forEach((button) => button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        filterButtons.forEach((item) => { const active = item === button; item.classList.toggle('is-active', active); item.setAttribute('aria-pressed', String(active)); });
+        projectCards.forEach((card) => card.classList.toggle('is-hidden', filter !== 'all' && card.dataset.category !== filter));
+      }));
 
-      // Resume: browser print dialog, with a dedicated print-only layout for saving as PDF
-      const resumeButton = document.getElementById('resume-download');
-      if (resumeButton) resumeButton.addEventListener('click', () => window.print());
+      const sectionLinks = [...document.querySelectorAll('.nav-links a')];
+      const pageSections = [...document.querySelectorAll('main section[id]')];
+      if ('IntersectionObserver' in window) {
+        const sectionObserver = new IntersectionObserver((entries) => entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          sectionLinks.forEach((link) => link.classList.toggle('is-current', link.getAttribute('href') === `#${entry.target.id}`));
+        }), { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+        pageSections.forEach((section) => sectionObserver.observe(section));
+      }
 
       const year = document.getElementById('current-year');
       if (year) year.textContent = String(new Date().getFullYear());
